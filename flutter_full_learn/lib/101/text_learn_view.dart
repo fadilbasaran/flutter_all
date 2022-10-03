@@ -5,9 +5,17 @@ class TextLernView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('Fadıl'),
+        child: Text(
+          ('Buy the best one' * 10),
+          maxLines: 2,
+          style: const TextStyle(
+              wordSpacing: 2,
+              letterSpacing: 3,
+              fontSize: 16,
+              fontWeight: FontWeight.w600),
+        ),
       ),
     );
   }
