@@ -10,10 +10,13 @@ class TextLernView extends StatelessWidget {
         child: Text(
           ('Buy the best one' * 20),
           maxLines: 2,
-          overflow: TextOverflow.ellipsis,
+          overflow:
+              TextOverflow.ellipsis, //Bu yapılar enum yapıları ile yapılıypr.
           textAlign: TextAlign.right,
           style: const TextStyle(
               wordSpacing: 2,
+              decoration: TextDecoration.underline,
+              fontStyle: FontStyle.italic,
               letterSpacing: 3,
               fontSize: 16,
               fontWeight: FontWeight.w600),
