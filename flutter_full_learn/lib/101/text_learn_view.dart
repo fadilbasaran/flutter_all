@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 
 class TextLernView extends StatelessWidget {
   const TextLernView({Key? key}) : super(key: key);
-
+  final String name = 'Fadıl';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Text Learning'),
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.heart_broken_outlined),
+        ),
+      ),
       body: Center(
         child: Text(
-          ('Buy the best one' * 20),
+          ('Welcome $name'),
           maxLines: 2,
           overflow:
               TextOverflow.ellipsis, //Bu yapılar enum yapıları ile yapılıypr.
@@ -18,6 +25,7 @@ class TextLernView extends StatelessWidget {
               decoration: TextDecoration.underline,
               fontStyle: FontStyle.italic,
               letterSpacing: 3,
+              color: Colors.orange,
               fontSize: 16,
               fontWeight: FontWeight.w600),
         ),
