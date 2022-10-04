@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TextLernView extends StatelessWidget {
-  const TextLernView({Key? key, this.userName}) : super(key: key);
+  TextLernView({Key? key, this.userName}) : super(key: key);
   final String name = 'Fadıl';
   final String? userName;
+  final ProjectKeys keys = ProjectKeys();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +25,12 @@ class TextLernView extends StatelessWidget {
               overflow: TextOverflow
                   .ellipsis, //Bu yapılar enum yapıları ile yapılıypr.
               textAlign: TextAlign.right,
-              style: const TextStyle(
+              style: TextStyle(
                   wordSpacing: 2,
                   decoration: TextDecoration.underline,
                   fontStyle: FontStyle.italic,
                   letterSpacing: 3,
-                  color: Colors.orange,
+                  color: ProjectColor.welcomeColor,
                   fontSize: 16,
                   fontWeight: FontWeight.w600),
             ),
@@ -48,10 +49,11 @@ class TextLernView extends StatelessWidget {
                   .ellipsis, //Bu yapılar enum yapıları ile yapılıypr.
               textAlign: TextAlign.right,
               style: Theme.of(context).textTheme.headline5?.copyWith(
-                    color: Colors.yellow,
+                    color: ProjectColor.welcomeColor,
                   ),
             ),
-            Text(userName??''),
+            Text(userName ?? ''),
+            Text(keys.welcome),
           ],
         ),
       ),
@@ -68,4 +70,12 @@ class ProjectStyle {
       color: Colors.orange,
       fontSize: 16,
       fontWeight: FontWeight.w600);
+}
+
+class ProjectColor {
+  static Color welcomeColor = Colors.red;
+}
+
+class ProjectKeys {
+  final String welcome = 'Merhaba';
 }
