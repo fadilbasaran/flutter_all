@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/101/container_sized_box_learn.dart';
+// ignore: unused_import
 import 'package:flutter_full_learn/101/text_learn_view.dart';
 
 void main() {
@@ -13,10 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home:  TextLernView(),
+      theme: ThemeData.dark(),
+      home:  const ContainerSizedBoxLearn(),
     );
   }
 }
