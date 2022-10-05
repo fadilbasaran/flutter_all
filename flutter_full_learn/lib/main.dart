@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/101/button_learn.dart';
-//import 'package:flutter_full_learn/101/scafold_learn.dart';
-// ignore: unused_import
-import 'package:flutter_full_learn/101/text_learn_view.dart';
+import 'package:flutter/services.dart';
 
 import '101/app_bar_learn.dart';
 
@@ -18,7 +15,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(
+          appBarTheme: const AppBarTheme(
+              centerTitle: true,
+              systemOverlayStyle: SystemUiOverlayStyle.light,
+              backgroundColor: Colors.orange,
+              elevation: 0)),
       home: const AppBarLearnView(),
     );
   }
