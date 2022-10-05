@@ -4,6 +4,8 @@ import 'package:flutter_full_learn/101/button_learn.dart';
 // ignore: unused_import
 import 'package:flutter_full_learn/101/text_learn_view.dart';
 
+import '101/app_bar_learn.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const ButtonLearn(),
+      home: const AppBarLearnView(),
     );
   }
 }
