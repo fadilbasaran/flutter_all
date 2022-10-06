@@ -24,7 +24,7 @@ class ContainerSizedBoxLearn extends StatelessWidget {
             //height: 50,
 
             constraints: const BoxConstraints(
-                maxWidth: 200, minWidth: 100,minHeight: 10, maxHeight: 120),
+                maxWidth: 600, minWidth: 100,minHeight: 4, maxHeight: 120),
             padding:
                 const EdgeInsets.all(10), //İçerdeki lompomete verebilirsiniz
             margin: const EdgeInsets.all(10),
