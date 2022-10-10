@@ -27,7 +27,7 @@ class ColumnAndRowLeaern extends StatelessWidget {
           const Spacer(flex: 2),
           Expanded(
               child: Row(
-            //mainAxisSize: MainAxisSize.min,
+            //mainAxisSize: MainAxisSize.min,//Minımum veya maksimum ayara geitiriliyor.
             
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,

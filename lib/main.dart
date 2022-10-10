@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/color_learn.dart';
+import 'package:flutter_full_learn/demos/stack_demo_view.dart';
 
-import '101/column_row.dart';
+import '101/stack_learn.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
               systemOverlayStyle: SystemUiOverlayStyle.light,
               backgroundColor: Colors.transparent,
               elevation: 0)),
-      home: const ColumnAndRowLeaern(),
+      home: const StcakLearn(),
     );
   }
 }

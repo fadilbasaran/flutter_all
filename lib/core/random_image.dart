@@ -9,7 +9,7 @@ class RandomImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.network(
       imageUrl,
-      fit: BoxFit.cover,
+      fit: BoxFit.fill,
     );
   }
 }
