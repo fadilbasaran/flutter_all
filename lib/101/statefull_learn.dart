@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/product/counter_hello_button.dart';
 
 class StatefullLearn extends StatefulWidget {
   const StatefullLearn({Key? key}) : super(key: key);
@@ -9,16 +10,17 @@ class StatefullLearn extends StatefulWidget {
 
 class _StatefullLearnState extends State<StatefullLearn> {
   int _countValue = 0;
-  void incrementValue() {
-    setState(() {
-      _countValue += 1;
-    });
-  }
 
-  void deincrementValue() {
-    setState(() {
-      _countValue -= 1;
-    });
+  void _updateCounter(bool isIncrement) {
+    if (isIncrement) {
+      setState(() {
+        _countValue += 1;
+      });
+    } else {
+      setState(() {
+        _countValue -= 1;
+      });
+    }
   }
 
   @override
@@ -29,21 +31,25 @@ class _StatefullLearnState extends State<StatefullLearn> {
         mainAxisSize: MainAxisSize.min,
         children: [
           _incrementButton(() {
-            incrementValue();
+            _updateCounter(true);
           }),
           _deincrementButton(() {
-            deincrementValue();
+            _updateCounter(false);
           }),
         ],
       ),
-      body: Center(
-        child: Text(
-          '$_countValue',
-          style: Theme.of(context)
-              .textTheme
-              .headline2
-              ?.copyWith(color: Colors.amber),
-        ),
+      body: Column(
+        children: [
+          Center(
+            child: Text('$_countValue',
+                style: Theme.of(context)
+                    .textTheme
+                    .headline2
+                    ?.copyWith(color: Colors.amber)),
+          ),
+          const Placeholder(),
+          const CounterHelloButton(),
+        ],
       ),
     );
   }

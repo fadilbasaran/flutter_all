@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/color_learn.dart';
-import 'package:flutter_full_learn/demos/stack_demo_view.dart';
 
-import '101/stack_learn.dart';
 import '101/statefull_learn.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +24,6 @@ class MyApp extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20))),
           errorColor: ColorsItems.sulu,
           appBarTheme: const AppBarTheme(
-            
               centerTitle: true,
               systemOverlayStyle: SystemUiOverlayStyle.light,
               backgroundColor: Colors.transparent,
