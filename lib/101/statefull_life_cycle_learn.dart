@@ -22,11 +22,28 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
     _computeName();
   }
 
+  @override
+  void didChangeDependencies() {
+    //bütün yenilendiğinde çalışır
+
+    super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(covariant StatefullLifeCycleLearn oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.message != widget.message) {
+      _message = widget.message;
+      _computeName();
+      setState(() {});
+    }
+  }
+
   void _computeName() {
     if (_isOdd) {
-      _message += ' Çift';
-    } else {
       _message += ' Tek';
+    } else {
+      _message += ' Çift';
     }
   }
 
@@ -34,11 +51,11 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: _isOdd ? Text('$_message') : Text('$_message'),
+        title: _isOdd ? Text(_message) : Text(_message),
       ),
       body: _isOdd //Çift ise text, Tek ise elevated button kullanılacak
-          ? TextButton(onPressed: () {}, child: Text(widget.message))
-          : ElevatedButton(onPressed: () {}, child: Text(widget.message)),
+          ? TextButton(onPressed: () {}, child: Text(_message))
+          : ElevatedButton(onPressed: () {}, child: Text(_message)),
     );
   }
 }
