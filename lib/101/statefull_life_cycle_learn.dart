@@ -39,6 +39,12 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
     }
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    _message = '';
+  }
+
   void _computeName() {
     if (_isOdd) {
       _message += ' Tek';
