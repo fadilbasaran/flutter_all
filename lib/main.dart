@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/color_learn.dart';
-import 'package:flutter_full_learn/demos/color_demos_views.dart';
 
+import '101/list_view_learn.dart';
 import 'demos/color_life_cycle_view.dart';
 
 void main() {
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
               systemOverlayStyle: SystemUiOverlayStyle.light,
               backgroundColor: Colors.transparent,
               elevation: 0)),
-      home: const ColorLifeCycleView(),
+      home: const ListViewLearn(),
     );
   }
 }
