@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_full_learn/product/language/langugage_items.dart';
 
 class TextFieldLearn extends StatefulWidget {
   const TextFieldLearn({Key? key}) : super(key: key);
@@ -20,24 +21,22 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
       body: Column(
         children: [
           TextField(
-            autofocus: true,//atıldığında direk onu 
-            focusNode: focusNodeTextfieldOne,
-            keyboardType: TextInputType.emailAddress,
-            autofillHints: const [AutofillHints.email],
-            maxLength: 20,
-            buildCounter: (context,
-                {int? currentLength, bool? isFocused, int? maxLength}) {
-              return _animatedContainer(currentLength);
-            },
-            inputFormatters: [TextProjectInputFormatter()._formatter],
-            decoration: const InputDecoration(
-              prefixIcon: Icon(Icons.mail),
-              border: OutlineInputBorder(),
-              labelText: 'Mail',
-            ),
-          ),
+              textInputAction: TextInputAction.next,
+              autofocus: true, //atıldığında direk onu
+              focusNode: focusNodeTextfieldOne,
+              keyboardType: TextInputType.emailAddress,
+              autofillHints: const [AutofillHints.email],
+              maxLength: 20,
+              buildCounter: (context,
+                  {int? currentLength, bool? isFocused, int? maxLength}) {
+                return _animatedContainer(currentLength);
+              },
+              inputFormatters: [TextProjectInputFormatter()._formatter],
+              decoration: _InputDecarotor().emailInput),
           TextField(
             focusNode: focusNodeTextfieldTwo,
+            minLines: 2,
+            maxLines: 4,
           )
         ],
       ),
@@ -60,6 +59,14 @@ class TextProjectInputFormatter {
     if (oldValue.text == 'a') {
       return oldValue;
     }
-    return oldValue;
+    return newValue;
   });
+}
+
+class _InputDecarotor {
+  final emailInput = InputDecoration(
+    prefixIcon: const Icon(Icons.mail),
+    border: const OutlineInputBorder(),
+    labelText: LanguageItems.mailTitle,
+  );
 }

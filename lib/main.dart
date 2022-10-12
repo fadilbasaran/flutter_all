@@ -17,6 +17,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Learning',
       theme: ThemeData.dark().copyWith(
+          textTheme: const TextTheme(subtitle1: TextStyle(color: Colors.red)),
+          inputDecorationTheme: const InputDecorationTheme(
+              filled: true,
+              fillColor: Colors.white,
+              iconColor: Colors.amber,
+              labelStyle: TextStyle(color: Colors.orange)),
           progressIndicatorTheme:
               const ProgressIndicatorThemeData(color: Colors.white),
           cardTheme: CardTheme(
