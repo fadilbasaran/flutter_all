@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ColorDemosView extends StatefulWidget {
-  const ColorDemosView({Key? key}) : super(key: key);
-
+  const ColorDemosView({Key? key, required this.initialColor})
+      : super(key: key);
+  final Color? initialColor;
   @override
   State<ColorDemosView> createState() => _ColorDemosViewState();
 }
 
 class _ColorDemosViewState extends State<ColorDemosView> {
-  Color _backgroudColor = Colors.transparent;
+  Color? _backgroudColor;
   final Map<String, Color> _colors = {
     'red': Colors.red,
     'blue': Colors.blue,
@@ -21,6 +22,21 @@ class _ColorDemosViewState extends State<ColorDemosView> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _backgroudColor = widget.initialColor ?? Colors.transparent;
+  }
+
+  @override
+  void didUpdateWidget(covariant ColorDemosView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.initialColor != _backgroudColor) {
+      _changeBackgroundColor(widget.initialColor);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _backgroudColor,
@@ -28,15 +44,7 @@ class _ColorDemosViewState extends State<ColorDemosView> {
         title: const Text('Color Demos View'),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (int value) {
-          if (value == _MyColor.red.index) {
-            _changeBackgroundColor(_colors['red']);
-          } else if (value == _MyColor.blue.index) {
-            _changeBackgroundColor(_colors['blue']);
-          } else if (value == _MyColor.green.index) {
-            _changeBackgroundColor(_colors['green']);
-          }
-        },
+        onTap: _colorOnTap,
         items: [
           BottomNavigationBarItem(
               icon: _ColorContainer(
@@ -53,6 +61,16 @@ class _ColorDemosViewState extends State<ColorDemosView> {
         ],
       ),
     );
+  }
+
+  void _colorOnTap(int value) {
+    if (value == _MyColor.red.index) {
+      _changeBackgroundColor(_colors['red']);
+    } else if (value == _MyColor.blue.index) {
+      _changeBackgroundColor(_colors['blue']);
+    } else if (value == _MyColor.green.index) {
+      _changeBackgroundColor(_colors['green']);
+    }
   }
 }
 
