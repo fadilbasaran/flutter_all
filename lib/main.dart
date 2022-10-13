@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/color_learn.dart';
 
-import '101/tab_learn.dart';
+import '202/tab_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +17,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Learning',
       theme: ThemeData.dark().copyWith(
+          bottomAppBarTheme: const BottomAppBarTheme(
+            shape: CircularNotchedRectangle(),
+          ),
+          //bottomAppBarColor: Colors.white,
+          tabBarTheme: const TabBarTheme(
+              labelColor: Colors.orange,
+              indicatorSize: TabBarIndicatorSize.label),
           textTheme: const TextTheme(subtitle1: TextStyle(color: Colors.red)),
           inputDecorationTheme: const InputDecorationTheme(
               filled: true,
