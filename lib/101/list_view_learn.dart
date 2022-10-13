@@ -56,13 +56,13 @@ class _StafullTestingInitState extends State<StafullTestingInit> {
   @override
   void initState() {
     super.initState();
-    print('Created');
+    //print('Created');
   }
 
   @override
   void dispose() {
     super.dispose();
-    print('exit');
+    //print('exit');
   }
 
   @override
