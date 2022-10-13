@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/color_learn.dart';
 
 import '101/list_view_learn.dart';
-import 'demos/color_life_cycle_view.dart';
 
 void main() {
   runApp(const MyApp());
