@@ -14,7 +14,7 @@ class ServiceViewLearn extends StatefulWidget {
 
 class _ServiceViewLearnState extends State<ServiceViewLearn> {
   List<PostModelService>? _items;
-  late final PostService _postService;
+  late final IPostService _postService;
   String? name;
   bool _isLoading = false;
   final _basUrl = 'https://jsonplaceholder.typicode.com/';
@@ -51,7 +51,7 @@ class _ServiceViewLearnState extends State<ServiceViewLearn> {
 
   Future<void> fetchPostItemsAdvance() async {
     _changeLoading();
-    _items= _postService.fetchPostItemsAdvance();
+    _items = await _postService.fetchPostItemsAdvance();
     _changeLoading();
   }
 
@@ -66,13 +66,15 @@ class _ServiceViewLearnState extends State<ServiceViewLearn> {
         ],
         title: Text(name ?? ' '),
       ),
-      body: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        itemCount: _items?.length ?? 0,
-        itemBuilder: (BuildContext context, int index) {
-          return _PostCard(model: _items?[index]);
-        },
-      ),
+      body: _isLoading
+          ? null
+          : ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              itemCount: _items?.length ?? 0,
+              itemBuilder: (BuildContext context, int index) {
+                return _PostCard(model: _items?[index]);
+              },
+            ),
     );
   }
 }
