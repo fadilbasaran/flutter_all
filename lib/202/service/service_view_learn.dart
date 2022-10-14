@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/202/service/post_model.dart';
+import 'package:flutter_full_learn/202/service/post_service.dart';
 
 class ServiceViewLearn extends StatefulWidget {
   const ServiceViewLearn({super.key});
@@ -13,6 +14,7 @@ class ServiceViewLearn extends StatefulWidget {
 
 class _ServiceViewLearnState extends State<ServiceViewLearn> {
   List<PostModelService>? _items;
+  late final PostService _postService;
   String? name;
   bool _isLoading = false;
   final _basUrl = 'https://jsonplaceholder.typicode.com/';
@@ -23,6 +25,7 @@ class _ServiceViewLearnState extends State<ServiceViewLearn> {
     name = 'fadıl';
     _networkManager = Dio(BaseOptions(baseUrl: _basUrl));
     fetchPostItems();
+    _postService = PostService();
   }
 
   void _changeLoading() {
@@ -48,17 +51,7 @@ class _ServiceViewLearnState extends State<ServiceViewLearn> {
 
   Future<void> fetchPostItemsAdvance() async {
     _changeLoading();
-    final response = await _networkManager.get('posts');
-
-    if (response.statusCode == HttpStatus.ok) {
-      //İşlem başarılı mı
-      final datas = response.data;
-      if (datas is List) {
-        setState(() {
-          _items = datas.map((e) => PostModelService.fromJson(e)).toList();
-        });
-      }
-    }
+    _items= _postService.fetchPostItemsAdvance();
     _changeLoading();
   }
 
