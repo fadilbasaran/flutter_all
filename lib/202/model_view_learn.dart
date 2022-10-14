@@ -46,7 +46,7 @@ class _ModelViewLearnState extends State<ModelViewLearn> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            user9.updateBody('null');
+            user9.updateBody('nulll');
           });
         },
       ),
