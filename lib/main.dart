@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/101/color_learn.dart';
 
 import '202/service/service_view_learn.dart';
 
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
           cardTheme: CardTheme(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20))),
-          errorColor: ColorsItems.sulu,
+          errorColor: const Color.fromARGB(255, 237, 97, 183),
           appBarTheme: const AppBarTheme(
               centerTitle: true,
               systemOverlayStyle: SystemUiOverlayStyle.light,
