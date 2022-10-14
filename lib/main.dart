@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_full_learn/101/image_learn.dart';
 
-import '202/service/service_view_learn.dart';
+import '202/service/service_post_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,10 +26,7 @@ class MyApp extends StatelessWidget {
               indicatorSize: TabBarIndicatorSize.label),
           textTheme: const TextTheme(subtitle1: TextStyle(color: Colors.red)),
           inputDecorationTheme: const InputDecorationTheme(
-              filled: true,
-              fillColor: Colors.white,
-              iconColor: Colors.amber,
-              labelStyle: TextStyle(color: Colors.orange)),
+              filled: true, labelStyle: TextStyle(color: Colors.orange)),
           progressIndicatorTheme:
               const ProgressIndicatorThemeData(color: Colors.white),
           cardTheme: CardTheme(
@@ -40,7 +38,7 @@ class MyApp extends StatelessWidget {
               systemOverlayStyle: SystemUiOverlayStyle.light,
               backgroundColor: Colors.transparent,
               elevation: 0)),
-      home: const ServiceViewLearn(),
+      home: const ImageLearn(),
     );
   }
 }
