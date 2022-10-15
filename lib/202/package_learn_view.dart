@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/202/package/loading_bar.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package/launch_manager.dart';
 
