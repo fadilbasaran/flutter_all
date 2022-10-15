@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/demos/password_text_field.dart';
 
 class WidgetSizeenumLearnView extends StatefulWidget {
   const WidgetSizeenumLearnView({super.key});
@@ -13,11 +14,16 @@ class _WidgetSizeenumLearnViewState extends State<WidgetSizeenumLearnView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Card(
-        child: Container(
-          height: WidgetSizes.normalCardHeight.value(),
-          color: Colors.green,
-        ),
+      body: Column(
+        children: [
+         const  PasswordTextField(),
+          Card(
+            child: Container(
+              height: WidgetSizes.normalCardHeight.value(),
+              color: Colors.green,
+            ),
+          ),
+        ],
       ),
     );
   }
