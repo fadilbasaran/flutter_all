@@ -1,21 +1,25 @@
 class PostModelService {
+  int? postId;
+  int? id;
   String? title;
-  String? body;
-  int? userId;
 
-  PostModelService({this.title, this.body, this.userId});
+  String? body;
+
+  PostModelService({this.postId, this.id, this.title, this.body});
 
   PostModelService.fromJson(Map<String, dynamic> json) {
+    postId = json['postId'];
+    id = json['id'];
     title = json['title'];
     body = json['body'];
-    userId = json['userId'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data =  <String, dynamic>{};
+    data['postId'] = postId;
+    data['id'] = id;
     data['title'] = title;
     data['body'] = body;
-    data['userId'] = userId;
     return data;
   }
 }

@@ -78,7 +78,7 @@ class _ServiceLearnPostState extends State<ServiceLearnPost> {
                       final postmodel = PostModelService(
                         body: _bodyController.text,
                         title: _titleController.text,
-                        userId: int.tryParse(_userIdController.text),
+                        postId: int.tryParse(_userIdController.text),
                       );
                       _addToService(postmodel);
                     }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '202/service/service_view_learn.dart';
+import '202/service/service_learn_get_view.dart';
+
 
 void main() {
   runApp(const MyApp());

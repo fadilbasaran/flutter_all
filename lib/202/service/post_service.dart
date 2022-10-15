@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_full_learn/202/service/comment_model.dart';
 import 'package:flutter_full_learn/202/service/post_model.dart';
 
 abstract class IPostService {
@@ -11,6 +12,7 @@ abstract class IPostService {
   Future<bool> putItemToService(PostModelService postmodel, int id);
   Future<bool> deleteItemToService(PostModelService postmodel, int id);
   Future<List<PostModelService>?> fetchPostItemsAdvance();
+  Future<List<CommentModel>?> fetchReleatedCommentWithPostId(int postId);
 }
 
 class PostService implements IPostService {
@@ -26,7 +28,7 @@ class PostService implements IPostService {
           await _dio.post(_PostServicePaths.posts.name, data: postmodel);
       return response.statusCode == HttpStatus.created;
     } on DioError catch (exception) {
-      _ShowDebug.showDioError(exception);
+      _ShowDebug.showDioError(exception, this);
     }
     return false;
   }
@@ -38,7 +40,7 @@ class PostService implements IPostService {
           data: postmodel);
       return response.statusCode == HttpStatus.created;
     } on DioError catch (exception) {
-      _ShowDebug.showDioError(exception);
+      _ShowDebug.showDioError(exception, this);
     }
     return false;
   }
@@ -49,7 +51,7 @@ class PostService implements IPostService {
       final response = await _dio.delete('$id');
       return response.statusCode == HttpStatus.created;
     } on DioError catch (exception) {
-      _ShowDebug.showDioError(exception);
+      _ShowDebug.showDioError(exception, this);
     }
     return false;
   }
@@ -67,18 +69,41 @@ class PostService implements IPostService {
         }
       }
     } on DioError catch (exception) {
-      _ShowDebug.showDioError(exception);
+      _ShowDebug.showDioError(exception, this);
+    }
+    return null;
+  }
+
+  @override
+  Future<List<CommentModel>?> fetchReleatedCommentWithPostId(int postId) async {
+    try {
+      final response = await _dio.get(_PostServicePaths.comments.name,
+          queryParameters: {_PostQuaryPaths.postId.name: postId});
+
+      if (response.statusCode == HttpStatus.ok) {
+        //İşlem başarılı mı
+        final datas = response.data;
+        if (datas is List) {
+          return datas.map((e) => CommentModel.fromJson(e)).toList();
+        }
+      }
+    } on DioError catch (exception) {
+      _ShowDebug.showDioError(exception, this);
     }
     return null;
   }
 }
 
-enum _PostServicePaths { posts, comment }
+enum _PostServicePaths { posts, comments }
 
-class _ShowDebug {
-  static void showDioError(DioError error) {
+enum _PostQuaryPaths { postId }
+
+class _ShowDebug<T> {
+  static void showDioError<T>(DioError error, T type) {
     if (kDebugMode) {
       print(error.message);
+      print(type);
+      print('------');
     }
   }
 }

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/202/service/comment_model_view.dart';
 import 'package:flutter_full_learn/202/service/post_model.dart';
 import 'package:flutter_full_learn/202/service/post_service.dart';
 
@@ -93,7 +94,15 @@ class _PostCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.only(bottom: 20),
       child: ListTile(
-          title: Text(_model?.title ?? ''), subtitle: Text(_model?.body ?? '')),
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => CommentServiceView(
+                postId: _model?.id,
+              ),
+            ));
+          },
+          title: Text(_model?.title ?? ''),
+          subtitle: Text(_model?.body ?? '')),
     );
   }
 }
