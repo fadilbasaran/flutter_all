@@ -64,7 +64,13 @@ class _AnimatedLearnViewState extends State<AnimatedLearnView>
             duration: _DurationItems.durationLow,
             child: const Text('Data'),
           ),
-          AnimatedIcon(icon: AnimatedIcons.home_menu, progress: controller)
+          AnimatedIcon(icon: AnimatedIcons.home_menu, progress: controller),
+          AnimatedContainer(
+            duration: _DurationItems.durationLow,
+            height: MediaQuery.of(context).size.height * 0.2,
+            width: MediaQuery.of(context).size.width * 0.2,
+            color: Colors.blue,
+          )
         ],
       ),
     );
