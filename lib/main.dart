@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '202/service/service_learn_get_view.dart';
+import '202/package_learn_view.dart';
 
 
 void main() {
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               systemOverlayStyle: SystemUiOverlayStyle.light,
               backgroundColor: Colors.transparent,
               elevation: 0)),
-      home: const ServiceViewLearn(),
+      home: const PackageLearnView(),
     );
   }
 }

@@ -101,9 +101,8 @@ enum _PostQuaryPaths { postId }
 class _ShowDebug<T> {
   static void showDioError<T>(DioError error, T type) {
     if (kDebugMode) {
-      print(error.message);
-      print(type);
-      print('------');
+      print('${error.message} İmdattt hat var!!!');
+      print('Suçlu==>> $type');
     }
   }
 }
