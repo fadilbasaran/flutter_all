@@ -11,7 +11,7 @@ class PasswordTextField extends StatefulWidget {
 class _PasswordTextFieldState extends State<PasswordTextField> {
   bool _isSecure = true;
   final obscurText = '*';
-  final hintText = 'Pfinalrd';
+  final hintText = 'Password';
 
   void _changeLoading() {
     setState(() {
@@ -39,6 +39,18 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         onPressed: () {
           _changeLoading();
         },
-        icon: Icon(_isSecure ? Icons.visibility_off : Icons.visibility));
+        icon: AnimatedCrossFade(
+            firstChild: Icon(
+              Icons.visibility_off_outlined,
+              color: Theme.of(context).primaryIconTheme.color,
+            ),
+            secondChild: Icon(
+              Icons.visibility_outlined,
+              color: Theme.of(context).primaryIconTheme.color,
+            ),
+            crossFadeState: _isSecure
+                ? CrossFadeState.showFirst
+                : CrossFadeState.showSecond,
+            duration: const Duration(seconds: 2)));
   }
 }
