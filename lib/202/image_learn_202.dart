@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/202/animated_learn_view.dart';
 
 class ImageLearn202 extends StatefulWidget {
   const ImageLearn202({super.key});
@@ -10,6 +11,8 @@ class ImageLearn202 extends StatefulWidget {
 class _ImageLearn202State extends State<ImageLearn202> {
   @override
   Widget build(BuildContext context) {
+    context.textTheme().subtitle1;
+
     return Scaffold(
       appBar: AppBar(),
       body: ImagePaths.dogIsFreak.toWidget(),
