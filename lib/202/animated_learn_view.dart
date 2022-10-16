@@ -1,4 +1,7 @@
+
 import 'package:flutter/material.dart';
+
+const double _kZero = 0;
 
 class AnimatedLearnView extends StatefulWidget {
   const AnimatedLearnView({super.key});
@@ -42,7 +45,7 @@ class _AnimatedLearnViewState extends State<AnimatedLearnView>
         },
       ),
       appBar: AppBar(
-        title: _placeHolderWidget(),
+        title: const CircularProgressIndicator(),
       ),
       body: Column(
         children: [
@@ -67,15 +70,33 @@ class _AnimatedLearnViewState extends State<AnimatedLearnView>
           AnimatedIcon(icon: AnimatedIcons.home_menu, progress: controller),
           AnimatedContainer(
             duration: _DurationItems.durationLow,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height:
+                _isVisible ? MediaQuery.of(context).size.height * 0.2 : _kZero,
             width: MediaQuery.of(context).size.width * 0.2,
             color: Colors.blue,
-          )
+          ),
+          Expanded(
+              child: Stack(
+            children: const [
+              AnimatedPositioned(
+                  curve: Curves.easeInOutSine,
+                  top: 20,
+                  duration: _DurationItems.durationLow,
+                  child: Text('data'))
+            ],
+          )),
+          Expanded(child: AnimatedList(
+            itemBuilder:
+                (BuildContext context, int index, Animation<double> animation) {
+              return const Text('data');
+            },
+          ))
         ],
       ),
     );
   }
 
+  // ignore: unused_element
   AnimatedCrossFade _placeHolderWidget() {
     return AnimatedCrossFade(
         duration: _DurationItems.durationLow,
