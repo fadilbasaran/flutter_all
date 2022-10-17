@@ -26,6 +26,8 @@ dependencies:
   #Google
   url_launcher: ^6.1.6
   shimmer: ^2.0.0
+  #Cache
+  shared_preferences: ^2.0.15
   
 
 

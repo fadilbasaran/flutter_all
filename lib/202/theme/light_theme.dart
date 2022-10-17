@@ -20,9 +20,9 @@ class LightTheme {
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateProperty.all(Colors.green),
       ),
-      textTheme: ThemeData.light().textTheme.copyWith(
-          subtitle1:
-              const TextStyle(fontStyle: FontStyle.italic, fontSize: 20)));
+      textTheme: ThemeData.light()
+          .textTheme
+          .copyWith(subtitle1: const TextStyle(fontSize: 20)));
 }
 
 class _LightColor {
