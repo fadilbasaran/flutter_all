@@ -11,6 +11,15 @@ class SharedLearn extends StatefulWidget {
 class _SharedLearnState extends LoadingStatefull<SharedLearn> {
   int _currentValue = 0;
   late final SharedManager _manager;
+  late final List<User> userItems;
+
+  @override
+  void initState() {
+    super.initState();
+    _manager = SharedManager();
+    _initialze();
+    userItems = UserItems().users;
+  }
 
   void _onCahangeValue(String valueS) {
     final value = int.tryParse(valueS);
@@ -20,13 +29,6 @@ class _SharedLearnState extends LoadingStatefull<SharedLearn> {
         _currentValue = value;
       });
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _manager = SharedManager();
-    _initialze();
   }
 
   Future<void> _initialze() async {
@@ -54,7 +56,12 @@ class _SharedLearnState extends LoadingStatefull<SharedLearn> {
         actions: [_loading(context)],
         title: Text(_currentValue.toString()),
       ),
-      body: TextField(onChanged: _onCahangeValue),
+      body: Column(
+        children: [
+          TextField(onChanged: _onCahangeValue),
+          Expanded(child: _UserListView()),
+        ],
+      ),
     );
   }
 
@@ -87,6 +94,54 @@ class _SharedLearnState extends LoadingStatefull<SharedLearn> {
       },
       child: const Icon(Icons.remove),
     );
+  }
+}
+
+class _UserListView extends StatelessWidget {
+  _UserListView({
+    Key? key,
+  }) : super(key: key);
+
+  final List<User> users = UserItems().users;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: users.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Card(
+          child: ListTile(
+            title: Text(users[index].name),
+            subtitle: Text(users[index].descriptoin),
+            trailing: Text(
+              users[index].url,
+              style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                  decoration: TextDecoration.underline, color: Colors.blue),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class User {
+  final String name;
+  final String descriptoin;
+  final String url;
+
+  User(this.name, this.descriptoin, this.url);
+}
+
+class UserItems {
+  late final List<User> users;
+
+  UserItems() {
+    users = [
+      User('fb', 'descriptoin', 'fb.dev'),
+      User('fb1', 'descriptoin', 'fb.dev'),
+      User('fb3', 'descriptoin', 'fb.dev'),
+    ];
   }
 }
 
