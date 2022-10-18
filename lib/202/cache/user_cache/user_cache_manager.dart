@@ -19,7 +19,8 @@ class UserCaheManger {
     final itemString = sharedManager.getItemsString(SharedKeys.users);
 
     if (itemString?.isNotEmpty ?? false) {
-      return itemString!.map((e) {
+      return itemString!.map((element) {
+        final jsonObject = jsonDecode(element);
         return User('name', 'descriptoin', 'url');
       }).toList();
     }

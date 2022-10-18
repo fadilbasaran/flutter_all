@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/202/theme/light_theme.dart';
 
-import '202/cache/shared_learn_cache_view.dart';
+import '202/cache/shared_list_cache.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Learning',
       theme: LightTheme().theme,
-      home: const SharedLearn(),
+      home: const SharedListCache(),
     );
   }
 }
