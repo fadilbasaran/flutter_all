@@ -37,11 +37,23 @@ class _SecureContexLearnViewState extends State<SecureContexLearnView> {
       appBar: AppBar(
         title: Text(_title),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-          onPressed: () async {
-            await _stronge.write(key: _SecureKeys.token.name, value: _title);
-          },
-          label: const Text('Save')),
+      floatingActionButton: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton.extended(
+              onPressed: () async {
+                await _stronge.delete(key: _SecureKeys.token.name);
+                
+              },
+              label: const Text('Remove')),
+          FloatingActionButton.extended(
+              onPressed: () async {
+                await _stronge.write(
+                    key: _SecureKeys.token.name, value: _title);
+              },
+              label: const Text('Save')),
+        ],
+      ),
       body: TextField(
         onChanged: saveItems,
       ),
