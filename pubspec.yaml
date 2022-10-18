@@ -28,6 +28,7 @@ dependencies:
   shimmer: ^2.0.0
   #Cache
   shared_preferences: ^2.0.15
+  flutter_secure_storage: ^6.0.0
   
 
 

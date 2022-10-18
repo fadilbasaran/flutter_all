@@ -16,13 +16,11 @@ class SharedManager {
 
   Future<void> saveString(SharedKeys key, String value) async {
     _checkPreferences();
-
     await preferences?.setString(key.name, value);
   }
 
   Future<void> saveItmesString(SharedKeys key, List<String> value) async {
     _checkPreferences();
-
     await preferences?.setStringList(key.name, value);
   }
 

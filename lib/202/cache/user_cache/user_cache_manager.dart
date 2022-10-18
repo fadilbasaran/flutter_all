@@ -1,18 +1,19 @@
 import 'dart:convert';
 
-import 'package:flutter_full_learn/202/cache/shared_learn_cache_view.dart';
 import 'package:flutter_full_learn/202/cache/shared_manager.dart';
 
-class UserCaheManger {
+import '../user_model.dart';
+
+class UserCacheManger {
   final SharedManager sharedManager;
 
-  UserCaheManger(this.sharedManager);
-  void saveItems(List<User> items) {
+  UserCacheManger(this.sharedManager);
+  Future<void> saveItems(List<User> items) async {
     //jsona dönüştür
 //compute
-    final _item = items.map((element) => jsonEncode(element)).toList();
+    final item = items.map((element) => jsonEncode(element.toJson())).toList();
 
-    sharedManager.saveItmesString(SharedKeys.users, _item);
+    await sharedManager.saveItmesString(SharedKeys.users, item);
   }
 
   List<User>? getItems() {
@@ -20,8 +21,11 @@ class UserCaheManger {
 
     if (itemString?.isNotEmpty ?? false) {
       return itemString!.map((element) {
-        final jsonObject = jsonDecode(element);
-        return User('name', 'descriptoin', 'url');
+        final json = jsonDecode(element);
+        if (json is Map<String, dynamic>) {
+          return User.fromJson(json);
+        }
+        return User('', '', '');
       }).toList();
     }
     return null;
