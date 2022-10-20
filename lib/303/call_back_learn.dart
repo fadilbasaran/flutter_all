@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/product/widget/button/answer_button.dart';
 
 import '../product/widget/callback_dropdown.dart';
 
@@ -22,7 +23,12 @@ class _CallBackLearnState extends State<CallBackLearn> {
             onUserSelected: (CallBackUser user) {
               print(user);
             },
-          )
+          ),
+          AnswerButton(
+            onNumber: (number) {
+              return number % 3 == 1;
+            },
+          ),
         ],
       ),
     );
