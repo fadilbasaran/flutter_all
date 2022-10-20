@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/product/extension/string_extantion.dart';
 import '../viewModel/reqres_view_model.dart';
 
 class ReqResView extends StatefulWidget {
@@ -21,7 +22,7 @@ class _ReqResViewState extends ReqresViewModel {
         itemCount: resource.length,
         itemBuilder: (BuildContext context, int index) {
           inspect(resource[index]);
-          return Card(child: Text(resource[index].name ?? ''));
+          return Card(color: Color(resource[index].color?.colorValue??0),child: Text(resource[index].name ?? ''));
         },
       ),
     );
