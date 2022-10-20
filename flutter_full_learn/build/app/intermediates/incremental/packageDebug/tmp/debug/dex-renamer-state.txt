@@ -1,4 +1,0 @@
-#Wed Oct 05 17:55:33 EET 2022
-base.0=/Users/LogDef/Documents/GitHub/flutter_all/flutter_full_learn/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
