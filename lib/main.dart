@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/202/theme/light_theme.dart';
-import '202/alert_learn.dart';
+import '303/reqrest_resource/view/reqres_view.dart';
 
 
 void main() {
@@ -13,10 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Learning',
-      theme: LightTheme().theme,
-      home: const AlertLearn(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Learning',
+        theme: LightTheme().theme,
+        home: const ReqResView());
   }
 }

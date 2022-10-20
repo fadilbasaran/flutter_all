@@ -4,6 +4,7 @@ class LightTheme {
   final _lightColor = _LightColor();
 
   late ThemeData theme = ThemeData(
+      tabBarTheme: const TabBarTheme(labelColor: Colors.purple,),
       primaryIconTheme: const IconThemeData(color: Colors.purple),
       appBarTheme: const AppBarTheme(
           shape: RoundedRectangleBorder(
