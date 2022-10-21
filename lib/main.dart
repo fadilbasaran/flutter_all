@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/303/lottie_learn.dart';
 
 import 'package:flutter_full_learn/product/global/resource_contex.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
 import 'package:provider/provider.dart';
-import '303/reqrest_resource/view/reqres_view.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -26,6 +26,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Learning',
         theme: context.watch<ThemeNotifer>().currentTheme,
-        home: const ReqResView());
+        home: const LottieLearn());
   }
 }

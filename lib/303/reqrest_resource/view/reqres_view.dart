@@ -22,7 +22,7 @@ class ReqResView extends StatefulWidget {
 //class _ReqResViewState extends ReqresViewModel {
 class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
   ///Sadece bi defa dinle read()
-  ///Birden çok defa dinlemye is watch() kullanılır.
+  ///Birden çok defa dinlemek için watch() kullanılır.
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
           floatingActionButton: FloatingActionButton(
             child: Text(context.watch<ThemeNotifer>().themeName),
             onPressed: () {
-              context.read<ThemeNotifer>().chnageTheme();
+              context.read<ThemeNotifer>().changeTheme();
               context.read<ThemeNotifer>().changeName();
             },
           ),

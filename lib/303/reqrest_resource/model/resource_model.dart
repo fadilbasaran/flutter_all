@@ -1,6 +1,12 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'resource_model.g.dart';
+
+String _fetchCustom(String data) {
+  //Burda pantoneValue alıyor
+  return 'aa';
+}
 
 @JsonSerializable()
 class ResourceModel {
@@ -21,16 +27,17 @@ class ResourceModel {
     //createToJson: false
 
     )
-class Data {
+class Data extends Equatable {
   final int? id;
   final String? name;
   final int? year;
   final String? color;
+  @JsonKey(fromJson: _fetchCustom)
   final String? pantoneValue;
   final String? price;
   final StatusCode status;
 
-  Data(this.status,
+  const Data(this.status,
       {this.id,
       this.name,
       this.year,
@@ -45,6 +52,10 @@ class Data {
   Map<String, dynamic> toJson() {
     return _$DataToJson(this);
   }
+
+  @override
+  List<Object?> get props =>
+      [id, name, price]; //eğer bu üç şey eşitse aynı kullanıcı
 }
 
 enum StatusCode {
