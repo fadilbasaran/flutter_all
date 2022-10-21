@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/101/image_learn.dart';
 import 'package:flutter_full_learn/303/reqrest_resource/service/reqres_service.dart';
 import 'package:flutter_full_learn/303/reqrest_resource/viewModel/reqres_provider.dart';
 import 'package:flutter_full_learn/product/extension/string_extantion.dart';
+import 'package:flutter_full_learn/product/global/resource_contex.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
 import 'package:flutter_full_learn/product/service/project_dio.dart';
 import 'package:provider/provider.dart';
@@ -33,6 +37,10 @@ class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
             },
           ),
           appBar: AppBar(
+              // ignore: prefer_const_literals_to_create_immutables
+              actions: [
+                const SaveAndNavigateWidget()
+              ],
               title: context.watch<ReqresProvider>().isLoading
                   ? const CircularProgressIndicator(
                       color: Colors.white,
@@ -40,13 +48,7 @@ class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
                   : null),
           body: Column(
             children: [
-              Selector<ReqresProvider, bool>(builder: (context, value, child) {
-                return value
-                    ? const Placeholder()
-                    : const Text('Gitti canım Place holder');
-              }, selector: (contex, provider) {
-                return provider.isLoading;
-              }),
+              _TempPlaceHolder(),
               Expanded(
                 child: _resourceListView(
                     context, context.watch<ReqresProvider>().resource),
@@ -59,6 +61,16 @@ class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
     );
   }
 
+  Selector<ReqresProvider, bool> _TempPlaceHolder() {
+    return Selector<ReqresProvider, bool>(builder: (context, value, child) {
+              return value
+                  ? const Placeholder()
+                  : const Text('Gitti canım Placeholder');
+            }, selector: (contex, provider) {
+              return provider.isLoading;
+            });
+  }
+
   ListView _resourceListView(BuildContext context, List<Data> items) {
     return ListView.builder(
       itemCount: items.length,
@@ -67,6 +79,27 @@ class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
             color: Color(items[index].color?.colorValue ?? 0),
             child: Text(items[index].name ?? ''));
       },
+    );
+  }
+}
+
+class SaveAndNavigateWidget extends StatelessWidget {
+  const SaveAndNavigateWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        context
+            .read<ReqresProvider>()
+            .saveLocale(context.read<ResourceContext>());
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) =>const ImageLearn(),
+        ));
+      },
+      icon: const Icon(Icons.generating_tokens),
     );
   }
 }

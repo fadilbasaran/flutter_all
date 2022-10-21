@@ -3,7 +3,11 @@ import 'package:flutter_full_learn/303/reqrest_resource/model/resource_model.dar
 class ResourceContext {
   ResourceModel? model;
 
-  void save(ResourceModel? model) {
+  void saveModel(ResourceModel? model) {
     this.model = model;
+  }
+
+  void clear() {
+    model = null;
   }
 }

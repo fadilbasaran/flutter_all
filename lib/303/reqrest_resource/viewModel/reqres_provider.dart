@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_full_learn/product/global/resource_contex.dart';
 
 import '../model/resource_model.dart';
 import '../service/reqres_service.dart';
@@ -22,5 +23,9 @@ class ReqresProvider extends ChangeNotifier {
   void _chnageLoading() {
     isLoading = !isLoading;
     notifyListeners(); //Bu metoda her hangi bir şey olduğunda bana bidirmeyi yarıyor.
+  }
+
+  void saveLocale(ResourceContext resourceContext) {
+    resourceContext.saveModel(ResourceModel(data: resource));
   }
 }
