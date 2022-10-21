@@ -6,7 +6,7 @@ import '../service/reqres_service.dart';
 class ReqresProvider extends ChangeNotifier {
   late final IReqresService reqresService;
   List<Data> resource = [];
-  bool isLoading = false;
+  bool isLoading = true;
 
   ReqresProvider(this.reqresService) {
     _fetch();
@@ -14,11 +14,13 @@ class ReqresProvider extends ChangeNotifier {
   }
 
   Future<void> _fetch() async {
+    _chnageLoading();
     resource = (await reqresService.fetchResourceItem())?.data ?? [];
+    _chnageLoading();
   }
 
   void _chnageLoading() {
     isLoading = !isLoading;
-    notifyListeners();//Bu mtoda her hangi bir şey olduğunda bana bidirmeyi yarıyor
+    notifyListeners(); //Bu metoda her hangi bir şey olduğunda bana bidirmeyi yarıyor.
   }
 }
