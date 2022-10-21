@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/303/reqrest_resource/service/reqres_service.dart';
 import 'package:flutter_full_learn/303/reqrest_resource/viewModel/reqres_provider.dart';
 import 'package:flutter_full_learn/product/extension/string_extantion.dart';
+import 'package:flutter_full_learn/product/global/theme_notifier.dart';
 import 'package:flutter_full_learn/product/service/project_dio.dart';
 import 'package:provider/provider.dart';
 
@@ -24,6 +25,13 @@ class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
     return ChangeNotifierProvider<ReqresProvider>(
       builder: (context, child) {
         return Scaffold(
+          floatingActionButton: FloatingActionButton(
+            child: Text(context.watch<ThemeNotifer>().themeName),
+            onPressed: () {
+              context.read<ThemeNotifer>().chnageTheme();
+              context.read<ThemeNotifer>().changeName();
+            },
+          ),
           appBar: AppBar(
               title: context.watch<ReqresProvider>().isLoading
                   ? const CircularProgressIndicator(
@@ -33,7 +41,9 @@ class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
           body: Column(
             children: [
               Selector<ReqresProvider, bool>(builder: (context, value, child) {
-                return value? const Placeholder():const Text('Gitti canım Place holder');
+                return value
+                    ? const Placeholder()
+                    : const Text('Gitti canım Place holder');
               }, selector: (contex, provider) {
                 return provider.isLoading;
               }),
