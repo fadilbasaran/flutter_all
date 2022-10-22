@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, avoid_print
 
 import 'package:collection/collection.dart';
 import 'package:flutter_full_learn/303/generic_learn.dart';
@@ -22,13 +22,17 @@ void main() {
       final response = users.singleWhere(
         (element) => element.findUserName('x'),
         orElse: () {
-          return GenericUser('null', 'id', 15);
+          return GenericUser('Ab valla yok', 'id', 15);
         },
       );
       print(response.name);
     } catch (e) {
       prints(e);
     }
+
+    print('${users.where((element) => element.money > 40)}');
+
+    
   });
 
   test('List Best of with collaction', () {

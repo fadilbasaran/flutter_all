@@ -43,6 +43,9 @@ class GenericUser {
   bool findUserName(String name) {
     return this.name == name;
   }
+
+  @override
+  String toString() => 'GenericUser(name:$name,id:$id, money:$money)';
 }
 
 class AdminUser extends GenericUser {
