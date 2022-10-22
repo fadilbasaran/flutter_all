@@ -16,5 +16,7 @@ void main() {
     List<HighCard> higCards = users.map((e) {
       return HighCard(items: e.name.split('').toList());
     }).toList();
+
+    users.singleWhere((element) => element.findUserName(element.name));
   });
 }
