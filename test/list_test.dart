@@ -37,7 +37,13 @@ void main() {
 
     users.take(5); //içinden 5 tane getir.
     users.remove(const GenericUser('fb1', '1', 34)); //id göre siler
-    users.removeAt(2);//indexe göre siler
+    users.removeAt(2); //indexe göre siler
+    users.removeWhere((element) => element.id == '10'); //id on olanı sil
+
+    final result = users.indexWhere((element) => element.id == '1');
+    if (result > 0) {
+      users[result] = const GenericUser('Ali', '332', 3434);
+    }
   });
 
   test('List Best of with collaction', () {
