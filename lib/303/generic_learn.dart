@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print, unused_local_variable, no_leading_underscores_for_local_identifiers
 
+import 'package:equatable/equatable.dart';
+
 class UserManagement<T extends AdminUser> {
   final T admin;
 
@@ -33,24 +35,27 @@ class UserManagement<T extends AdminUser> {
   }
 }
 
-class GenericUser {
+class GenericUser extends Equatable {
   final String name;
   final String id;
 
   final int money;
 
-  GenericUser(this.name, this.id, this.money);
+  const GenericUser(this.name, this.id, this.money);
   bool findUserName(String name) {
     return this.name == name;
   }
 
   @override
   String toString() => 'GenericUser(name:$name,id:$id, money:$money)';
+  
+  @override
+  List<Object?> get props => [id];//id ler eşitse eşittir
 }
 
 class AdminUser extends GenericUser {
   final int role;
-  AdminUser(super.name, super.id, super.money, this.role);
+  const AdminUser(super.name, super.id, super.money, this.role);
 }
 
 class FBModel<T> {

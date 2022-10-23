@@ -10,9 +10,9 @@ void main() {
 
   test('List Best of', () {
     final users = [
-      GenericUser('fb1', '1', 34),
-      GenericUser('fb2', '2', 40),
-      GenericUser('fb3', '3', 50),
+      const GenericUser('fb1', '1', 34),
+      const GenericUser('fb2', '2', 40),
+      const GenericUser('fb3', '3', 50),
     ];
     List<HighCard> higCards = users.map((e) {
       return HighCard(items: e.name.split('').toList());
@@ -22,7 +22,7 @@ void main() {
       final response = users.singleWhere(
         (element) => element.findUserName('x'),
         orElse: () {
-          return GenericUser('Ab valla yok', 'id', 15);
+          return const GenericUser('Ab valla yok', 'id', 15);
         },
       );
       print(response.name);
@@ -31,15 +31,20 @@ void main() {
     }
 
     print('${users.where((element) => element.money > 40)}');
+    users.addAll([const GenericUser('eklend', 'id', 15)]);
+    users.lastWhere((element) =>
+        element.id == '5'); //Listenin en sonundan bana idsi 5 olanı getir
 
-    
+    users.take(5); //içinden 5 tane getir.
+    users.remove(const GenericUser('fb1', '1', 34)); //id göre siler
+    users.removeAt(2);//indexe göre siler
   });
 
   test('List Best of with collaction', () {
     final users = [
-      GenericUser('fb1', '1', 34),
-      GenericUser('fb2', '2', 40),
-      GenericUser('fb3', '3', 50),
+      const GenericUser('fb1', '1', 34),
+      const GenericUser('fb2', '2', 40),
+      const GenericUser('fb3', '3', 50),
     ];
     List<HighCard> higCards = users.map((e) {
       return HighCard(items: e.name.split('').toList());
@@ -48,6 +53,8 @@ void main() {
     final response = users.singleWhereOrNull(
       (element) => element.findUserName('x'),
     );
+    users.lastWhereOrNull(
+        (element) => element.id == '5'); //Varsa getir eğer yoksa null döndür
     prints(response);
   });
 }

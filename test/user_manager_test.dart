@@ -10,11 +10,11 @@ void main() {
     'Calculate testing',
     () {
       final users = [
-        GenericUser('Fb', '23', 30),
-        GenericUser('Fb', '23', 30),
-        GenericUser('Fb', '23', 30),
+       const GenericUser('Fb', '23', 30),
+       const GenericUser('Fb', '23', 30),
+       const GenericUser('Fb', '23', 30),
       ];
-      final userManagment = UserManagement(AdminUser('vadmin', '1', 15, 2));
+      final userManagment = UserManagement(const AdminUser('vadmin', '1', 15, 2));
       final result = userManagment.calculateMoney(users);
       final response = userManagment.showNames<String>(users);
       expect(result, 90);
