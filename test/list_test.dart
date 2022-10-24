@@ -53,7 +53,7 @@ void main() {
       //insert etmek yerine büyütüyor Listeyi,
       users.sample(3); //Rastegele kaç değer istiyorsan san geri veriyor
 
-      users.contains(const GenericUser('fb3', '3', 50));
+      print(users.contains(const GenericUser('fb3', '3', 50)));
     },
   );
 
@@ -79,5 +79,8 @@ void main() {
         element) {}); //Hem elementi hem de kaçıncı sırada olduğuna bakabiliyorsun.
 
     prints(response);
+
+    users.any((element) =>
+        element.money > 5); //Moneysi 5ten büyük olan var mı bu listede
   });
 }
