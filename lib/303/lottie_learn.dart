@@ -1,7 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/product/constant/duration_items.dart';
 import 'package:flutter_full_learn/product/constant/lottie_items.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
+import 'package:flutter_full_learn/product/navigator/navigator_routs.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +25,14 @@ class _LottieLearnState extends State<LottieLearn>
     super.initState();
     _contoller = AnimationController(
         vsync: this, duration: DurationItems.durationNormal());
+    navigateToHome();
+  }
+
+  Future<void> navigateToHome() async {
+    await Future.delayed(const Duration(seconds: 3));
+
+    Navigator.of(context).pushReplacementNamed(NavRoutes.home.withParaf);
+    //Gittiği Sayfada geri gelemiyor.
   }
 
   @override

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/demos/my_collaction_demos.dart';
-
 import 'package:flutter_full_learn/product/global/resource_contex.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
+import 'package:flutter_full_learn/product/navigator/navigator_routs.dart';
 import 'package:provider/provider.dart';
+
+
 
 void main() {
   runApp(MultiProvider(
@@ -23,9 +24,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Learning',
-        theme: context.watch<ThemeNotifer>().currentTheme,
-        home: const MyCollactionDemos());
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Learning',
+      theme: context.watch<ThemeNotifer>().currentTheme,
+
+      routes:NavgiatorRoutes().items,
+      //home: const LottieLearn()
+    );
   }
 }
