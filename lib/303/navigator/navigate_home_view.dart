@@ -14,10 +14,12 @@ class _NavigateHOmeViewState extends State<NavigateHOmeView> {
     return Scaffold(
       floatingActionButton: FloatingActionButton.large(
         onPressed: () {
-          Navigator.of(context).pushNamed(NavRoutes.detail.withParaf,arguments: 'abc');
+          Navigator.of(context)
+              .pushNamed(NavRoutes.detail.withParaf, arguments: 'abc');
         },
         child: const Icon(Icons.abc),
       ),
+      
       appBar: AppBar(
         title: Text(toString()),
       ),

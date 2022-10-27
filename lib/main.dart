@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/303/lottie_learn.dart';
 import 'package:flutter_full_learn/product/global/resource_contex.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
+import 'package:flutter_full_learn/product/navigator/navigator_custom.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_routs.dart';
 import 'package:provider/provider.dart';
-
-
 
 void main() {
   runApp(MultiProvider(
@@ -18,7 +18,7 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget with NavigatorCustom {
   const MyApp({super.key});
 
   @override
@@ -28,7 +28,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Learning',
       theme: context.watch<ThemeNotifer>().currentTheme,
 
-      routes:NavgiatorRoutes().items,
+      onUnknownRoute: (settings) {
+        MaterialPageRoute(builder: (context) => const LottieLearn());
+        return null;
+      },
+      onGenerateRoute: onGenerateRoute,
+
+      routes: NavgiatorRoutes().items,
       //home: const LottieLearn()
     );
   }

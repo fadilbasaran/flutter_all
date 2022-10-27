@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class NavigateHomeDetail extends StatefulWidget {
@@ -16,15 +18,17 @@ class _NavigateHomeDetailState extends State<NavigateHomeDetail> {
     super.initState();
     _id = widget.id ?? '';
 
-    Future.microtask(
-      () {
-        final _modelid = ModalRoute.of(context)?.settings.arguments;
-        print(_modelid);
-        setState(() {
-          _id = _modelid is String ? _modelid : widget.id;
-        });
-      },
-    );
+    if (_id == null) {
+      Future.microtask(
+        () {
+          final modelid = ModalRoute.of(context)?.settings.arguments;
+          print(modelid);
+          setState(() {
+            _id = modelid is String ? modelid : widget.id;
+          });
+        },
+      );
+    }
   }
 
   @override
