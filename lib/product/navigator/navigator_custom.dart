@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/303/lottie_learn.dart';
 import 'package:flutter_full_learn/303/navigator/navigate_home_detail.dart';
+import 'package:flutter_full_learn/303/navigator/navigate_home_view.dart';
 import 'package:flutter_full_learn/main.dart';
 
 import 'navigator_routs.dart';
@@ -19,30 +20,28 @@ mixin NavigatorCustom<T extends MyApp> on Widget {
 
     final _routes = routeSettings.name == NavgiatorRoutes.parag
         ? NavRoutes.init
-        : NavRoutes.values.byName(routeSettings.name!);
+        : NavRoutes.values.byName(routeSettings.name!.replaceFirst('/', ''));
 
     switch (_routes) {
       case NavRoutes.init:
-        break;
+        return _navigateToNormal(const LottieLearn());
+
       case NavRoutes.home:
-        break;
+        return _navigateToNormal(const NavigateHOmeView());
+        
       case NavRoutes.detail:
-        break;
+        final _id = routeSettings.arguments;
+        return _navigateToNormal(
+            NavigateHomeDetail(id: _id is String ? _id : null),
+            isFullScreenDialog: true);
     }
 
-    if (routeSettings.name == '/') {
-      return _navigateToNormal(const LottieLearn());
-    } else if (routeSettings.name == '/homeDetail') {
-      final _id = routeSettings.arguments;
-      return _navigateToNormal(NavigateHomeDetail(
-        id: _id is String ? _id : null,
-      ));
-    }
-    return null;
+
   }
 
-  Route<dynamic>? _navigateToNormal(Widget child) {
+  Route<dynamic>? _navigateToNormal(Widget child, {bool? isFullScreenDialog}) {
     return MaterialPageRoute(
+      fullscreenDialog: isFullScreenDialog ?? false,
       builder: (context) {
         return child;
       },

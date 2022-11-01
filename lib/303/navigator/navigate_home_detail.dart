@@ -34,6 +34,7 @@ class _NavigateHomeDetailState extends State<NavigateHomeDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink[400],
       appBar: AppBar(
         title: Center(child: Text(_id ?? '')),
       ),
