@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/303/lottie_learn.dart';
+import 'package:flutter_full_learn/303/mobix_image_picker/view/mobx_image_upload.dart';
 import 'package:flutter_full_learn/product/global/resource_contex.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_custom.dart';
@@ -24,20 +25,17 @@ class MyApp extends StatelessWidget with NavigatorCustom {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Learning',
-      theme: context.watch<ThemeNotifer>().currentTheme,
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Learning',
+        theme: context.watch<ThemeNotifer>().currentTheme,
+        onUnknownRoute: (settings) {
+          MaterialPageRoute(builder: (context) => const LottieLearn());
+          return null;
+        },
+        onGenerateRoute: onGenerateRoute,
+        navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
 
-      onUnknownRoute: (settings) {
-        MaterialPageRoute(builder: (context) => const LottieLearn());
-        return null;
-      },
-      onGenerateRoute: onGenerateRoute,
-
-      navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
-
-      // routes: NavgiatorRoutes().items,
-      //home: const LottieLearn()
-    );
+        // routes: NavgiatorRoutes().items,
+        home: const MobxImageUpload());
   }
 }
