@@ -4,7 +4,6 @@ import 'package:flutter_full_learn/product/global/resource_contex.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_custom.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_manager.dart';
-import 'package:flutter_full_learn/product/navigator/navigator_routs.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -37,7 +36,7 @@ class MyApp extends StatelessWidget with NavigatorCustom {
 
       navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
 
-     // routes: NavgiatorRoutes().items,
+      // routes: NavgiatorRoutes().items,
       //home: const LottieLearn()
     );
   }
