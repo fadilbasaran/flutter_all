@@ -27,7 +27,7 @@ dependencies:
 
   #Google
   url_launcher: ^6.1.6
-  shimmer: ^2.0.0
+    : ^2.0.0
   json_serializable: ^6.5.3
   json_annotation: ^4.7.0
   
@@ -42,6 +42,7 @@ dependencies:
 
   #States
   provider: ^6.0.4
+  flutter_mobx: ^2.0.6+4
 
 
   # The following adds the Cupertino Icons font to your application.
