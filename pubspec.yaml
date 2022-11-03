@@ -31,6 +31,9 @@ dependencies:
   json_serializable: ^6.5.3
   json_annotation: ^4.7.0
   image_picker: ^0.8.6
+  firebase_core: ^2.1.1
+  firebase_storage: ^11.0.4
+  file_picker: ^5.2.2
   
   #Core
   equatable: ^2.0.5
