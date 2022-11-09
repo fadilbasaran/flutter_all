@@ -49,7 +49,7 @@ class _TabLearnState extends State<TabAdvanceLearn>
 
       //indicatorPadding: const EdgeInsets.only(bottom: 20),
 
-      // indicatorSize: TabBarIndicatorSize.label,//Alt çizginin neye göre şekil alacağı
+      indicatorSize: TabBarIndicatorSize.label,//Alt çizginin neye göre şekil alacağı
       unselectedLabelColor: Colors.purple,
       unselectedLabelStyle:
           Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.purple),
