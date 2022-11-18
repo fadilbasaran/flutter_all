@@ -8,6 +8,8 @@ class MobxImageUpload extends StatefulWidget {
 }
 
 class _MobxImageUploadState extends State<MobxImageUpload> {
+  final String _imageUploadLottiePath =
+      'https://assets3.lottiefiles.com/packages/lf20_urbk83vw.json';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
