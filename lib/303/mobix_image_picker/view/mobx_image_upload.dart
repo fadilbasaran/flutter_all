@@ -55,9 +55,7 @@ class _MobxImageUploadState extends State<MobxImageUpload> {
                               onPressed: () {
                                 _imageUploadManager.fetchFromLibrary();
                               },
-                              icon: FittedBox(
-                                  child:
-                                      Lottie.network(_imageUploadLottiePath))),
+                              icon: Lottie.network(_imageUploadLottiePath)),
                         ],
                       ))),
             ],
