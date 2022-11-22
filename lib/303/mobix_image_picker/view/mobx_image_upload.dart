@@ -51,11 +51,13 @@ class _MobxImageUploadState extends State<MobxImageUpload> {
                                     ? Image.file(_imageUploadViewModel.file!)
                                     : const SizedBox());
                           }),
-                          IconButton(
-                              onPressed: () {
-                                _imageUploadManager.fetchFromLibrary();
-                              },
-                              icon: Lottie.network(_imageUploadLottiePath)),
+                          Expanded(
+                            child: IconButton(
+                                onPressed: () {
+                                  _imageUploadManager.fetchFromLibrary();
+                                },
+                                icon: Lottie.network(_imageUploadLottiePath)),
+                          ),
                         ],
                       ))),
             ],
