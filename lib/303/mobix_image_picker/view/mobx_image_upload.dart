@@ -1,70 +1,88 @@
-// ignore_for_file: unused_field
-
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/303/mobix_image_picker/view_model/image_upload_view_model.dart';
+
+
+import '../../../product/utility/image_upload.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../product/utility/image_upload.dart';
+import '../view_model/image_upload_view_model.dart';
 
 class MobxImageUpload extends StatefulWidget {
-  const MobxImageUpload({super.key});
+  const MobxImageUpload({Key? key}) : super(key: key);
 
   @override
   State<MobxImageUpload> createState() => _MobxImageUploadState();
 }
 
 class _MobxImageUploadState extends State<MobxImageUpload> {
-  final String _imageUploadLottiePath =
-      'https://assets3.lottiefiles.com/packages/lf20_urbk83vw.json';
+  final String _imageUplaodLottiePath = 'https://assets3.lottiefiles.com/packages/lf20_urbk83vw.json';
 
   final _imageUploadViewModel = ImageUploadViewModel();
-  final _imageUploadManager = ImageUploadManager();
+  final _imageUploadManger = ImageUploadManager();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.save),
+          onPressed: () {
+            _imageUploadViewModel.saveDataToService();
+          }),
       appBar: AppBar(
         title: const Text('Image Upload'),
         actions: [
           Observer(builder: (_) {
-            return _imageUploadViewModel.isLoading
-                ? const FittedBox(
-                    child: CircularProgressIndicator(color: Colors.white))
-                : const SizedBox.shrink();
+            return _imageUploadViewModel.isLoading ? const CircularProgressIndicator() : const SizedBox();
+          }),
+          Observer(builder: (_) {
+            return Text(_imageUploadViewModel.downloadText);
           })
         ],
       ),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                  flex: 2,
-                  child: Card(
-                      elevation: 10,
-                      child: Row(
-                        children: [
-                          Observer(builder: (_) {
-                            return Expanded(
-                                flex: 4,
-                                child: _imageUploadViewModel.file != null
-                                    ? Image.file(_imageUploadViewModel.file!)
-                                    : const SizedBox());
-                          }),
-                          Expanded(
-                            child: IconButton(
-                                onPressed: () {
-                                  _imageUploadManager.fetchFromLibrary();
-                                },
-                                icon: Lottie.network(_imageUploadLottiePath)),
-                          ),
-                        ],
-                      ))),
-            ],
+      body: Column(children: [
+        Expanded(
+          flex: 2,
+          child: Card(
+            elevation: 10,
+            child: Row(
+              children: [
+                Expanded(child: _localImage()),
+                Expanded(child: _imageUploadButton()),
+              ],
+            ),
           ),
-          const Divider(),
-        ],
-      ),
+        ),
+        const Divider(),
+        Expanded(
+          flex: 4,
+          child: _imageNetwork(),
+        )
+      ]),
     );
+  }
+
+  Observer _localImage() {
+    return Observer(
+      builder: (context) {
+        return _imageUploadViewModel.file != null ? Image.file(_imageUploadViewModel.file!) : const SizedBox();
+      },
+    );
+  }
+
+  FittedBox _imageUploadButton() {
+    return FittedBox(
+      child: IconButton(
+          onPressed: () async {
+            _imageUploadViewModel.saveLocalFile(await _imageUploadManger.fetchFromLibrary());
+          },
+          icon: Lottie.network(_imageUplaodLottiePath)),
+    );
+  }
+
+  Observer _imageNetwork() {
+    return Observer(builder: (_) {
+      return _imageUploadViewModel.imageUrl.isNotEmpty
+          ? Image.network(_imageUploadViewModel.imageUrl)
+          : const SizedBox();
+    });
   }
 }
