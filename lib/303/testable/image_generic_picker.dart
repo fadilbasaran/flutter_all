@@ -11,8 +11,9 @@ class _ImageUploadManagerState extends State<ImageUploadManager> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-body:Column(children: [],)
-    );
+        appBar: AppBar(),
+        body: Column(
+          children: [],
+        ));
   }
 }
