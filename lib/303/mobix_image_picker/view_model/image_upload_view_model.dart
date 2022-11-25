@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_interpolation_to_compose_strings
+// ignore_for_file: prefer_interpolation_to_compose_strings, depend_on_referenced_packages, library_private_types_in_public_api
 
 import 'dart:io';
 

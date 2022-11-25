@@ -13,7 +13,9 @@ class _ImageUploadManagerState extends State<ImageUploadManager> {
     return Scaffold(
         appBar: AppBar(),
         body: Column(
-          children: [],
+          children: [
+            ElevatedButton(onPressed: () {}, child: Text("Fetch from galery")),
+          ],
         ));
   }
 }
