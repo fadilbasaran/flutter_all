@@ -14,7 +14,12 @@ class _ImageUploadManagerState extends State<ImageUploadManager> {
         appBar: AppBar(),
         body: Column(
           children: [
-            ElevatedButton(onPressed: () {}, child: Text("Fetch from galery")),
+            ElevatedButton(
+                onPressed: () {}, child: const Text("Fetch from galery")),
+            ElevatedButton(
+                onPressed: () {}, child: const Text("Fetch from normal")),
+            ElevatedButton(
+                onPressed: () {}, child: const Text("Fetch from multiple")),
           ],
         ));
   }
