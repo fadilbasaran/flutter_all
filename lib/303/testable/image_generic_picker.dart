@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ImageUploadManager extends StatefulWidget {
   const ImageUploadManager({super.key});
@@ -8,6 +9,7 @@ class ImageUploadManager extends StatefulWidget {
 }
 
 class _ImageUploadManagerState extends State<ImageUploadManager> {
+  final ImagePicker _picker = ImagePicker();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
