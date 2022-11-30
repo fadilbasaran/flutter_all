@@ -92,20 +92,17 @@ class MockReqresProvider extends _i1.Mock implements _i3.ReqresProvider {
         returnValue: false,
       ) as bool);
   @override
-  void saveLocale(
+  bool? saveToLocale(
     _i5.ResourceContext? resourceContext,
     List<_i4.Data>? resource,
   ) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #saveLocale,
-          [
-            resourceContext,
-            resource,
-          ],
-        ),
-        returnValueForMissingStub: null,
-      );
+      (super.noSuchMethod(Invocation.method(
+        #saveToLocale,
+        [
+          resourceContext,
+          resource,
+        ],
+      )) as bool?);
   @override
   void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(

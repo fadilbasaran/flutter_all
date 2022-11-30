@@ -25,7 +25,8 @@ class ReqresProvider extends ChangeNotifier {
     notifyListeners(); //Bu metoda her hangi bir şey olduğunda bana bidirmeyi yarıyor.
   }
 
-  void saveLocale(ResourceContext resourceContext,List<Data> resource) {
+  bool? saveToLocale(ResourceContext resourceContext, List<Data> resource) {
     resourceContext.saveModel(ResourceModel(data: resource));
+    return resourceContext.model?.data?.isEmpty;
   }
 }
