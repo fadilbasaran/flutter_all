@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
-class ImageUploadManager extends StatefulWidget {
-  const ImageUploadManager({super.key});
+import '../../product/utility/image_upload.dart';
+
+class ImagePickerGenericView extends StatefulWidget {
+  const ImagePickerGenericView({super.key});
 
   @override
-  State<ImageUploadManager> createState() => _ImageUploadManagerState();
+  State<ImagePickerGenericView> createState() => _ImagePickerGenericViewState();
 }
 
-class _ImageUploadManagerState extends State<ImageUploadManager> {
-  final ImagePicker _picker = ImagePicker();
+class _ImagePickerGenericViewState extends State<ImagePickerGenericView> {
+  final _imageUploadManager = ImageUploadManager();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,9 +18,15 @@ class _ImageUploadManagerState extends State<ImageUploadManager> {
         body: Column(
           children: [
             ElevatedButton(
-                onPressed: () {}, child: const Text("Fetch from galery")),
+                onPressed: () {
+                  _imageUploadManager.fetchFromLibrary();
+                },
+                child: const Text("Fetch from galery")),
             ElevatedButton(
-                onPressed: () {}, child: const Text("Fetch from normal")),
+                onPressed: () {
+                  _imageUploadManager.fetchFromCamera();
+
+                }, child: const Text("Fetch from normal")),
             ElevatedButton(
                 onPressed: () {}, child: const Text("Fetch from multiple")),
           ],
