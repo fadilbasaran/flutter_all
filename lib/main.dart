@@ -37,6 +37,6 @@ class MyApp extends StatelessWidget with NavigatorCustom {
         navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
 
         // routes: NavgiatorRoutes().items,
-        home: const ImagePickerGenericView());
+        home: const MobxImageUpload());
   }
 }
