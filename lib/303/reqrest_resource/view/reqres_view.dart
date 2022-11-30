@@ -94,7 +94,7 @@ class SaveAndNavigateWidget extends StatelessWidget {
       onPressed: () {
         context
             .read<ReqresProvider>()
-            .saveLocale(context.read<ResourceContext>());
+            .saveLocale(context.read<ResourceContext>(),context.read<ReqresProvider>().resource);
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) =>const ImageLearn(),
         ));

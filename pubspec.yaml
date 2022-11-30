@@ -17,7 +17,6 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
- 
   collection: any
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
@@ -35,18 +34,14 @@ dependencies:
   json_serializable: ^6.5.3
   lottie: ^1.4.3
   mobx_codegen: ^2.0.7+3
+  mockito: ^5.3.2
   provider: ^6.0.4
   shared_preferences: ^2.0.15
   shimmer: ^2.0.0
   url_launcher: ^6.1.6
 
-  
-  
-
 dev_dependencies:
   build_runner: ^2.3.2
-
-  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
