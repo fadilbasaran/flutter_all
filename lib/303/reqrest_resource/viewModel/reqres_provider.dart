@@ -16,8 +16,12 @@ class ReqresProvider extends ChangeNotifier {
 
   Future<void> _fetch() async {
     _chnageLoading();
-    resource = (await reqresService.fetchResourceItem())?.data ?? [];
+    resource =await fetchItems();
     _chnageLoading();
+  }
+
+  Future<List<Data>> fetchItems() async {
+    return resource = (await reqresService.fetchResourceItem())?.data ?? [];
   }
 
   void _chnageLoading() {
