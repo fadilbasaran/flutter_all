@@ -61,7 +61,7 @@ class ButtonGroup extends StatelessWidget {
                 height: 50,
                 child: Center(
                     child: Text(_createNote,
-                        style: Theme.of(context).textTheme.headline5)))),
+                        style: Theme.of(context).textTheme.headlineSmall)))),
         TextButton(onPressed: () {}, child: Text(_importNotes))
       ],
     );
@@ -104,7 +104,7 @@ class SubTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(_description * 5,
         textAlign: textAlign,
-        style: Theme.of(context).textTheme.subtitle1?.copyWith(
+        style: Theme.of(context).textTheme.titleMedium?.copyWith(
               color: Colors.black45,
             ));
   }

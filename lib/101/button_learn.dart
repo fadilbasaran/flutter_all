@@ -22,7 +22,7 @@ class ButtonLearn extends StatelessWidget {
             child: Text('Save',
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle1
+                    .titleMedium
                     ?.copyWith(color: Colors.blue)),
           ), //null verince deactive oluyor
           ElevatedButton(onPressed: () {}, child: const Text('data')),
