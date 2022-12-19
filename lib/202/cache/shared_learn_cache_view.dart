@@ -66,7 +66,7 @@ class _SharedLearnState extends LoadingStatefull<SharedLearn> {
     return Center(
         child: isLoading
             ? CircularProgressIndicator(
-                color: Theme.of(context).backgroundColor,
+                color: Theme.of(context).colorScheme.background,
               )
             : const SizedBox.shrink());
   }
