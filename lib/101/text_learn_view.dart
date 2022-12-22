@@ -20,10 +20,9 @@ class TextLernView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              ('Welcome $name ${name.length}'),
-              maxLines: 2,
-              overflow: TextOverflow
-                  .ellipsis, //Bu yapılar enum yapıları ile yapılıyor.
+              ('Welcome $name ${name.length}' * 30),
+              maxLines: 2, //Maksimum satır sayısı
+              overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.right,
               style: TextStyle(
                   wordSpacing: 2,
@@ -37,16 +36,14 @@ class TextLernView extends StatelessWidget {
             Text(
               ('Hello $name ${name.length}'),
               maxLines: 2,
-              overflow: TextOverflow
-                  .ellipsis, //Bu yapılar enum yapıları ile yapılıypr.
+              overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.right,
               style: ProjectStyle.welcomeStyle,
             ),
             Text(
               ('Hello $name ${name.length}'),
               maxLines: 2,
-              overflow: TextOverflow
-                  .ellipsis, //Bu yapılar enum yapıları ile yapılıypr.
+              overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.right,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: ProjectColor.welcomeColor,
