@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'req_res_test.mocks.dart';
+
 
 @GenerateMocks([ReqresProvider])
 void main() {

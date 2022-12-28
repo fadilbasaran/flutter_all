@@ -21,7 +21,7 @@ class _ThemeLearnViewState extends State<ThemeLearnView> {
           onChanged: (value) {},
           title: Text(
             'Select',
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         )
       ]),

@@ -8,14 +8,14 @@ class ColorLearn extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        color: Theme.of(context).errorColor,
+        color: Theme.of(context).colorScheme.error,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
             'data',
             style: Theme.of(context)
                 .textTheme
-                .subtitle1
+                .titleMedium
                 ?.copyWith(color: ColorsItems.viola, fontSize: 26),
           ),
         ),

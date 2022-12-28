@@ -62,8 +62,8 @@ class _AnimatedLearnViewState extends State<AnimatedLearnView>
                   icon: const Icon(Icons.vertical_split))),
           AnimatedDefaultTextStyle(
             style: _isVisible
-                ? context.textTheme().headline1 ?? const TextStyle()
-                : context.textTheme().subtitle1 ?? const TextStyle(),
+                ? context.textTheme().displayLarge ?? const TextStyle()
+                : context.textTheme().titleMedium ?? const TextStyle(),
             duration: _DurationItems.durationLow,
             child: const Text('Data'),
           ),

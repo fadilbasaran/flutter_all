@@ -81,7 +81,7 @@ class _UserListView extends StatelessWidget {
             subtitle: Text(users[index].description ?? ''),
             trailing: Text(
               users[index].url ?? '',
-              style: Theme.of(context).textTheme.subtitle1?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   decoration: TextDecoration.underline, color: Colors.blue),
             ),
           ),

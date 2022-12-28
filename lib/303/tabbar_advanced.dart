@@ -52,7 +52,7 @@ class _TabLearnState extends State<TabAdvanceLearn>
       indicatorSize: TabBarIndicatorSize.label,//Alt çizginin neye göre şekil alacağı
       unselectedLabelColor: Colors.purple,
       unselectedLabelStyle:
-          Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.purple),
+          Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.purple),
       tabs: _MyTabViews.values.map((e) => Tab(text: e.name)).toList(),
       controller: _tabController,
     );

@@ -45,10 +45,10 @@ class _TabLearnState extends State<TabLearn> with TickerProviderStateMixin {
       padding: const EdgeInsets.all(20),
 
       //indicatorPadding: const EdgeInsets.only(bottom: 20),
-      labelStyle: Theme.of(context).textTheme.subtitle2,
+      labelStyle: Theme.of(context).textTheme.titleSmall,
       // indicatorSize: TabBarIndicatorSize.label,//Alt çizginin neye göre şekil alacağı
       unselectedLabelColor: Colors.white,
-      unselectedLabelStyle: Theme.of(context).textTheme.subtitle1,
+      unselectedLabelStyle: Theme.of(context).textTheme.titleMedium,
       tabs: _MyTabViews.values.map((e) => Tab(text: e.name)).toList(),
       controller: _tabController,
     );

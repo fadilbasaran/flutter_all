@@ -83,7 +83,7 @@ class TitleWidget extends StatelessWidget {
       _title,
       style: Theme.of(context)
           .textTheme
-          .headline5
+          .headlineSmall
           ?.copyWith(color: Colors.black45, fontWeight: FontWeight.bold),
     );
   }

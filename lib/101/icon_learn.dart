@@ -15,7 +15,7 @@ class IconLearnView extends StatelessWidget {
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.message_outlined),
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
             iconSize: IconsSizes.iconSmall2x,
           ),
           IconButton(

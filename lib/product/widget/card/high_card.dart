@@ -7,7 +7,7 @@ class HighCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       items.join(','),
-      style: Theme.of(context).textTheme.headline3,
+      style: Theme.of(context).textTheme.displaySmall,
     );
   }
 }

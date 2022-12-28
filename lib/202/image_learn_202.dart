@@ -11,7 +11,7 @@ class ImageLearn202 extends StatefulWidget {
 class _ImageLearn202State extends State<ImageLearn202> {
   @override
   Widget build(BuildContext context) {
-    context.textTheme().subtitle1;
+    context.textTheme().titleMedium;
 
     return Scaffold(
       appBar: AppBar(),

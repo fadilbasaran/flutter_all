@@ -44,7 +44,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
             child: Text('$_countValue',
                 style: Theme.of(context)
                     .textTheme
-                    .headline2
+                    .displayMedium
                     ?.copyWith(color: Colors.amber)),
           ),
           const Placeholder(),

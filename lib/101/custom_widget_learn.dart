@@ -62,7 +62,7 @@ class CostumFoodButton extends StatelessWidget
           title,
           style: Theme.of(context)
               .textTheme
-              .subtitle2
+              .titleSmall
               ?.copyWith(color: whiteColor, fontWeight: FontWeight.bold),
         ),
       ),

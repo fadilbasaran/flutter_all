@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/101/scafold_learn.dart';
 import 'package:flutter_full_learn/101/text_learn_view.dart';
 import 'package:flutter_full_learn/303/lottie_learn.dart';
 import 'package:flutter_full_learn/product/global/resource_contex.dart';
