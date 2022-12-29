@@ -6,7 +6,7 @@ class ContainerSizedBoxLearn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('SizedBox ve Container Learn'),),
       body: Column(
         children: [
           SizedBox(
@@ -27,7 +27,7 @@ class ContainerSizedBoxLearn extends StatelessWidget {
                 maxWidth: 600, minWidth: 100,minHeight: 4, maxHeight: 120),
            
             padding:
-                const EdgeInsets.all(10), //İçerdeki lompomete verebilirsiniz
+                const EdgeInsets.all(10), //İçerdeki componentleri verebilirsiniz
             margin: const EdgeInsets.all(10),
 
             decoration: ProjectUtiltiy.boxDcoration,

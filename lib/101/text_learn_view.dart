@@ -9,7 +9,7 @@ class TextLernView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),
+        titleTextStyle: const TextStyle(color: Colors.black, fontSize: 20),
         backgroundColor: Colors.white,
         elevation: 30,
         title: const Text('Text Learning'),
