@@ -9,6 +9,9 @@ class LightTheme {
       ),
       primaryIconTheme: const IconThemeData(color: Colors.purple),
       appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),
+          backgroundColor: Colors.white,
+          elevation: 30,
           shape: RoundedRectangleBorder(
               borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(20)))),

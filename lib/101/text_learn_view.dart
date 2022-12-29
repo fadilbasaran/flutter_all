@@ -9,10 +9,13 @@ class TextLernView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),
+        backgroundColor: Colors.white,
+        elevation: 30,
         title: const Text('Text Learning'),
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.heart_broken_outlined),
+          icon: const Icon(Icons.home),
         ),
       ),
       body: Center(
@@ -21,9 +24,9 @@ class TextLernView extends StatelessWidget {
           children: [
             Text(
               ('Welcome $name ${name.length}' * 30),
-              maxLines: 2, //Maksimum satır sayısı
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.right,
+              textAlign: TextAlign.left,
               style: TextStyle(
                   wordSpacing: 2,
                   decoration: TextDecoration.underline,
@@ -60,13 +63,14 @@ class TextLernView extends StatelessWidget {
 
 class ProjectStyle {
   static TextStyle welcomeStyle = const TextStyle(
-      wordSpacing: 2,
-      decoration: TextDecoration.underline,
-      fontStyle: FontStyle.italic,
-      letterSpacing: 3,
-      color: Colors.orange,
-      fontSize: 16,
-      fontWeight: FontWeight.w600);
+    wordSpacing: 2,
+    decoration: TextDecoration.underline,
+    fontStyle: FontStyle.italic,
+    letterSpacing: 3,
+    color: Colors.orange,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
 }
 
 class ProjectColor {
