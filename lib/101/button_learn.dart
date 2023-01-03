@@ -60,19 +60,20 @@ class ButtonLearn extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20)))),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 20, bottom: 20, right: 40, left: 40),
-                child: Text(
-                  'Place Bid',
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
-              ))
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20)))),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  top: 20, bottom: 20, right: 40, left: 40),
+              child: Text(
+                'Padding verilen buton',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+            ),
+          ),
         ],
       ),
     );
