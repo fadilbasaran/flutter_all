@@ -27,11 +27,11 @@ class ColumnAndRowLeaern extends StatelessWidget {
           const Spacer(flex: 2),
           Expanded(
               child: Row(
-            //mainAxisSize: MainAxisSize.min,//Minımum veya maksimum ayara geitiriliyor.
-            
+            //mainAxisSize: MainAxisSize.min,//Minimum veya maksimum ayara getiriliyor.
+
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
-            
+
             children: const [
               Text('a1'),
               Text('a2'),

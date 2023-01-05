@@ -7,7 +7,7 @@ class StcakLearn extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('Stack Learn'),),
       body: Stack(
         children: [
           Container(color: Colors.red, height: 100),

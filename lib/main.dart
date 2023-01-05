@@ -6,9 +6,9 @@ import 'package:flutter_full_learn/product/navigator/navigator_custom.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_manager.dart';
 import 'package:provider/provider.dart';
 
-
+import '101/column_row.dart';
 import '101/indicator_learn.dart';
-
+import '101/list_tile_learn.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -39,6 +39,6 @@ class MyApp extends StatelessWidget with NavigatorCustom {
         navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
 
         // routes: NavgiatorRoutes().items,
-        home: const IndicatorLearn());
+        home: const ColumnAndRowLeaern());
   }
 }

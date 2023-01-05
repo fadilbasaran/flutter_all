@@ -16,16 +16,21 @@ class ListTileLearn extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ListTile(
-                  title: const RandomImage(),
+                  title: const Text(
+                    'Başlık kısmı',
+                    style: TextStyle(fontSize: 20),
+                  ),
                   onTap: () {},
-                  subtitle: const Text('How do you use your card'),
+                  subtitle: const Text(
+                    'How do you use your card',
+                    style: TextStyle(fontSize: 18),
+                  ),
                   minVerticalPadding: 0,
                   dense: true,
                   leading: Container(
                     height: 200,
                     width: 30,
                     alignment: Alignment.topCenter,
-                    color: Colors.red,
                     child: const Icon(Icons.money),
                   ),
                   trailing: const SizedBox(
