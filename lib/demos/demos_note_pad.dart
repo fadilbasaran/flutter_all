@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/image_learn.dart';
 
-class DenemosView extends StatelessWidget {
+class NoteDemos extends StatelessWidget {
   final String _title = 'Create Your First Note';
   final String _description = 'Add to name bla bla bla';
   final _createNote = 'Create A Note';
   final _importNotes = 'Import Notes';
-  const DenemosView({Key? key}) : super(key: key);
+  const NoteDemos({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        title: const Text('Note demos'),
         systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
       body: Padding(
-        padding: PadingWithPage.horizanltolPaading,
+        padding: PadingWithPage.horizontalPadding,
         child: Column(
           children: [
             PngImage(name: ImageItems().apple),
@@ -56,6 +57,7 @@ class ButtonGroup extends StatelessWidget {
     return Column(
       children: [
         ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
             onPressed: () {},
             child: SizedBox(
                 height: 50,
@@ -111,7 +113,7 @@ class SubTitle extends StatelessWidget {
 }
 
 class PadingWithPage {
-  static const EdgeInsets horizanltolPaading =
+  static const EdgeInsets horizontalPadding =
       EdgeInsets.symmetric(horizontal: 20);
   static const EdgeInsets verticalPadding = EdgeInsets.symmetric(vertical: 10);
   static const EdgeInsets verticalPaddingBottom =

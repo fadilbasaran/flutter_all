@@ -20,7 +20,7 @@ class LightTheme {
           const FloatingActionButtonThemeData(backgroundColor: Colors.orange),
       buttonTheme: ButtonThemeData(
         colorScheme: ColorScheme.light(
-            onPrimary: Colors.purple, onSecondary: _lightColor.textColor),
+            onPrimary: Colors.blueAccent, onSecondary: _lightColor.textColor),
       ),
       colorScheme: const ColorScheme.light(),
       checkboxTheme: CheckboxThemeData(

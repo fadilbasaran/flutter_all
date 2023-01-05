@@ -9,6 +9,7 @@ class CustomWidgetLearn extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        title: const Text('Custom Widget Learn'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
