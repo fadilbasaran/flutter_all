@@ -26,7 +26,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text('Stateful Learn'),),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
