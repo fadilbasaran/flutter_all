@@ -6,32 +6,36 @@ class CardLearn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          _CostumCard(
-            child: SizedBox(
-                height: 100,
-                width: 300,
-                child: Center(
-                  child: Text(
-                    'Ali',
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                )),
-          ),
-          _CostumCard(
+      appBar: AppBar(
+        title: const Text('Card Learn'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            _CostumCard(
               child: SizedBox(
-            height: 100,
-            width: 300,
-            child: Center(
-              child: Text(
-                'Ali',
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
+                  height: 100,
+                  width: 300,
+                  child: Center(
+                    child: Text(
+                      'Ali',
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  )),
             ),
-          )),
-        ],
+            _CostumCard(
+                child: SizedBox(
+              height: 100,
+              width: 300,
+              child: Center(
+                child: Text(
+                  'Ali',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
+            )),
+          ],
+        ),
       ),
     );
   }
@@ -39,6 +43,7 @@ class CardLearn extends StatelessWidget {
 
 class _CostumCard extends StatelessWidget {
   final Widget child;
+
   final roundedRectangleBorder =
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
   _CostumCard({Key? key, required this.child}) : super(key: key);

@@ -8,25 +8,25 @@ class IconLearnView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Icon Learning'),
+        title: const Text('Icon Learn'),
       ),
       body: Column(
         children: [
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.message_outlined),
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.error,
             iconSize: IconsSizes.iconSmall2x,
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.message_outlined),
+            icon: const Icon(Icons.person_outlined),
             color: iconsColors.ceriseRed,
             iconSize: IconsSizes.iconSmall2x,
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.message_outlined),
+            icon: const Icon(Icons.heart_broken),
             color: iconsColors.ceriseRed,
             iconSize: iconsSizes.iconSmall,
           ),

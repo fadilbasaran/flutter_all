@@ -22,7 +22,7 @@ class _ImageLearnState extends State<ImageLearn> {
         appBar: AppBar(
           title: Text(
               context.read<ResourceContext>().model?.data?.length.toString() ??
-                  ''),
+                  'Image Learn'),
           actions: [
             IconButton(
                 onPressed: () {

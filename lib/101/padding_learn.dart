@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-class PaddinLearn extends StatelessWidget {
-  const PaddinLearn({Key? key}) : super(key: key);
+class PaddingLearn extends StatelessWidget {
+  const PaddingLearn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Padding Learn'),
+      ),
       body: Padding(
         padding: ProjectPadding.pagePaddingVertical,
         child: Column(
@@ -14,14 +16,15 @@ class PaddinLearn extends StatelessWidget {
             Padding(
               padding:
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-              child: Container(height: 100, color: Colors.white54),
+              child: Container(height: 100, color: Colors.amber),
             ),
             Padding(
               padding: ProjectPadding.pagePaddingAll,
               child: Container(
                   height: 100,
-                  padding: EdgeInsets.zero /*Padding kendi içinde tanımlanabilir*/,
-                  color: Colors.white54),
+                  padding:
+                      EdgeInsets.zero /*Padding kendi içinde tanımlanabilir*/,
+                  color: Colors.orange),
             ),
             Padding(
               padding: ProjectPadding.pagePaddingOnlyRight +

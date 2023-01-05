@@ -6,7 +6,9 @@ class ColorLearn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Color learn'),
+      ),
       body: Container(
         color: Theme.of(context).colorScheme.error,
         child: Padding(
@@ -16,7 +18,7 @@ class ColorLearn extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleMedium
-                ?.copyWith(color: ColorsItems.viola, fontSize: 26),
+                ?.copyWith(color: ColorsItems.white, fontSize: 26),
           ),
         ),
       ),
@@ -27,4 +29,5 @@ class ColorLearn extends StatelessWidget {
 class ColorsItems {
   static const Color sulu = Color(0xFFCBED61);
   static const Color viola = Color.fromRGBO(198, 128, 170, 1);
+  static const Color white = Colors.white;
 }
