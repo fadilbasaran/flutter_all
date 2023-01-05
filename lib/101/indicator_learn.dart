@@ -7,12 +7,12 @@ class IndicatorLearn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        actions: const [CenterCirculerRedProgress()],
-      ),
-      body: const LinearProgressIndicator()
-    );
+        appBar: AppBar(
+          title: const Text('Indicator Learn'),
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+          actions: const [CenterCirculerRedProgress()],
+        ),
+        body: const LinearProgressIndicator());
   }
 }
 

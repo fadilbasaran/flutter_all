@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/101/card_learn.dart';
 import 'package:flutter_full_learn/303/lottie_learn.dart';
 import 'package:flutter_full_learn/product/global/resource_contex.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
@@ -7,9 +6,9 @@ import 'package:flutter_full_learn/product/navigator/navigator_custom.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_manager.dart';
 import 'package:provider/provider.dart';
 
-import '101/image_learn.dart';
-import '101/padding_learn.dart';
-import 'demos/demos_note_pad.dart';
+
+import '101/indicator_learn.dart';
+
 
 void main() {
   runApp(MultiProvider(
@@ -40,6 +39,6 @@ class MyApp extends StatelessWidget with NavigatorCustom {
         navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
 
         // routes: NavgiatorRoutes().items,
-        home: const NoteDemos());
+        home: const IndicatorLearn());
   }
 }
