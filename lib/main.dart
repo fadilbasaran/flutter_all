@@ -12,6 +12,9 @@ import '101/list_tile_learn.dart';
 import '101/page_view_learn.dart';
 import '101/stack_learn.dart';
 import '101/statefull_learn.dart';
+import '101/text_field_learn.dart';
+import 'demos/color_demos_views.dart';
+import 'demos/color_life_cycle_view.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -42,6 +45,6 @@ class MyApp extends StatelessWidget with NavigatorCustom {
         navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
 
         // routes: NavgiatorRoutes().items,
-        home: const ListTileLearn());
+        home: const ColorLifeCycleView());
   }
 }

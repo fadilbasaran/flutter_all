@@ -42,9 +42,6 @@ class _ColorDemosViewState extends State<ColorDemosView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _backgroudColor,
-      appBar: AppBar(
-        title: const Text('Color Demos View'),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _colorOnTap,
         items: [

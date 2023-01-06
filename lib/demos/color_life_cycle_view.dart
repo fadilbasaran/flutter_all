@@ -14,6 +14,7 @@ class _ColorLifeCycleViewState extends State<ColorLifeCycleView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Color Demos View'),
         actions: [
           IconButton(
               onPressed: () {
@@ -21,7 +22,10 @@ class _ColorLifeCycleViewState extends State<ColorLifeCycleView> {
                   _backgroundColor = Colors.pink;
                 });
               },
-              icon: const Icon(Icons.clear))
+              icon: const Icon(
+                Icons.clear,
+                color: Colors.black,
+              ))
         ],
       ),
       body: Column(

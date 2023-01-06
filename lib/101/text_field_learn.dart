@@ -17,28 +17,35 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          TextField(
-              textInputAction: TextInputAction.next,
-              autofocus: true, //atıldığında direk onu
-              focusNode: focusNodeTextfieldOne,
-              keyboardType: TextInputType.emailAddress,
-              autofillHints: const [AutofillHints.email],
-              maxLength: 20,
-              buildCounter: (context,
-                  {int? currentLength, bool? isFocused, int? maxLength}) {
-                return _animatedContainer(currentLength);
-              },
-              inputFormatters: [TextProjectInputFormatter()._formatter],
-              decoration: _InputDecarotor().emailInput),
-          TextField(
-            focusNode: focusNodeTextfieldTwo,
-            minLines: 2,
-            maxLines: 4,
-          )
-        ],
+      appBar: AppBar(
+        title: const Text('Text Learn'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Center(
+          child: Column(
+            children: [
+              TextField(
+                  textInputAction: TextInputAction.next,
+                  autofocus: true, //açıldığında burdan başlanılacaktır.
+                  focusNode: focusNodeTextfieldOne,
+                  keyboardType: TextInputType.emailAddress,
+                  autofillHints: const [AutofillHints.email],
+                  maxLength: 30,
+                  buildCounter: (context,
+                      {int? currentLength, bool? isFocused, int? maxLength}) {
+                    return _animatedContainer(currentLength);
+                  },
+                  inputFormatters: [TextProjectInputFormatter()._formatter],
+                  decoration: _InputDecarotor().emailInput),
+              TextField(
+                focusNode: focusNodeTextfieldTwo,
+                minLines: 2,
+                maxLines: 4,
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -54,14 +61,7 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
   }
 }
 
-class TextProjectInputFormatter {
-  final _formatter = TextInputFormatter.withFunction((oldValue, newValue) {
-    if (oldValue.text == 'a') {
-      return oldValue;
-    }
-    return newValue;
-  });
-}
+
 
 class _InputDecarotor {
   final emailInput = InputDecoration(
@@ -69,4 +69,13 @@ class _InputDecarotor {
     border: const OutlineInputBorder(),
     labelText: LanguageItems.mailTitle,
   );
+}
+
+class TextProjectInputFormatter {
+  final _formatter = TextInputFormatter.withFunction((oldValue, newValue) {
+    if (oldValue.text == 'a') {
+      return oldValue;
+    }
+    return newValue;
+  });
 }
