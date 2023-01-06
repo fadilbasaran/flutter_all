@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 import '101/column_row.dart';
 import '101/indicator_learn.dart';
 import '101/list_tile_learn.dart';
+import '101/page_view_learn.dart';
 import '101/stack_learn.dart';
 import '101/statefull_learn.dart';
 
@@ -41,6 +42,6 @@ class MyApp extends StatelessWidget with NavigatorCustom {
         navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
 
         // routes: NavgiatorRoutes().items,
-        home: const StatefullLearn());
+        home: const ListTileLearn());
   }
 }
