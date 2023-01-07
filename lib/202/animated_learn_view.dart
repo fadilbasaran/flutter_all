@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 const double _kZero = 0;
@@ -44,9 +43,7 @@ class _AnimatedLearnViewState extends State<AnimatedLearnView>
           controller.animateTo(_isVisible ? 0 : 1);
         },
       ),
-      appBar: AppBar(
-        title: const CircularProgressIndicator(),
-      ),
+      appBar: AppBar(title: const Text('Animation Learn')),
       body: Column(
         children: [
           ListTile(

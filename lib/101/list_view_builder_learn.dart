@@ -11,7 +11,9 @@ class _ListViewBuilderLearnState extends State<ListViewBuilderLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('ListViewBulder Learn'),
+      ),
       body: ListView.separated(
         itemCount: 15,
         separatorBuilder: (BuildContext context, int index) {

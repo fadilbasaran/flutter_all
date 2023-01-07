@@ -8,7 +8,9 @@ class StackDemoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Stack Demoview'),
+      ),
       body: Column(
         children: [
           Expanded(
@@ -35,7 +37,7 @@ class StackDemoView extends StatelessWidget {
 
   Card _cardCostum() {
     return const Card(
-      color: Colors.white,
+      color: Colors.orange,
       shape: RoundedRectangleBorder(),
     );
   }

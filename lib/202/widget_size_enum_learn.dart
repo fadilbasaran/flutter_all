@@ -16,11 +16,11 @@ class _WidgetSizeenumLearnViewState extends State<WidgetSizeenumLearnView> {
       appBar: AppBar(),
       body: Column(
         children: [
-         const  PasswordTextField(),
+          const PasswordTextField(),
           Card(
             child: Container(
               height: WidgetSizes.normalCardHeight.value(),
-              color: Colors.green,
+              color: Colors.black,
             ),
           ),
         ],

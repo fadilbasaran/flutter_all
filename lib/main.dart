@@ -6,15 +6,9 @@ import 'package:flutter_full_learn/product/navigator/navigator_custom.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_manager.dart';
 import 'package:provider/provider.dart';
 
-import '101/column_row.dart';
-import '101/indicator_learn.dart';
-import '101/list_tile_learn.dart';
-import '101/page_view_learn.dart';
-import '101/stack_learn.dart';
-import '101/statefull_learn.dart';
-import '101/text_field_learn.dart';
-import 'demos/color_demos_views.dart';
-import 'demos/color_life_cycle_view.dart';
+import '202/package_learn_view.dart';
+import '202/sheet_learn.dart';
+import '202/widget_size_enum_learn.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -45,6 +39,6 @@ class MyApp extends StatelessWidget with NavigatorCustom {
         navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
 
         // routes: NavgiatorRoutes().items,
-        home: const ColorLifeCycleView());
+        home: const PackageLearnView());
   }
 }

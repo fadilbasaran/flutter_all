@@ -13,14 +13,17 @@ class _AlertLearnState extends State<AlertLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Alert Widget Learn'),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           final response = await showDialog(
-            //barrierDismissible:false, //böyle yapıldığı Sadece istenilem butonlar ile çıkabilir
+            barrierDismissible:
+                false, //böyle yapıldığı Sadece istenilem butonlar ile çıkabilir
             context: context,
             builder: (context) {
-              return const  _ImageZoomDialog();
+              return const _UpdateDialog();
             },
           );
           //inspect(response);

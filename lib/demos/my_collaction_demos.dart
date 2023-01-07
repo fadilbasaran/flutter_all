@@ -19,7 +19,9 @@ class _MyCollactionDemosState extends State<MyCollactionDemos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('My Collaction Demos'),
+      ),
       body: ListView.builder(
         padding: PaddingUtility().paddingHorizontal,
         itemCount: _items.length,
