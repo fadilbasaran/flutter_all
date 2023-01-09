@@ -7,8 +7,6 @@ import 'package:flutter_full_learn/product/navigator/navigator_manager.dart';
 import 'package:provider/provider.dart';
 
 import '202/package_learn_view.dart';
-import '202/sheet_learn.dart';
-import '202/widget_size_enum_learn.dart';
 
 void main() {
   runApp(MultiProvider(
